@@ -1,0 +1,274 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>糖哨兵 App 新增功能线框原型</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="workspace">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">糖</div>
+        <div>
+          <h1>糖哨兵 App</h1>
+          <p>一期剩余功能线框原型</p>
+        </div>
+      </div>
+      <nav class="nav" aria-label="页面导航">
+        <button class="nav-item active" data-page="unit-bind">绑定阶段：血糖单位</button>
+        <button class="nav-item" data-page="mode">模式设置与预览</button>
+        <button class="nav-item" data-page="mine">我的</button>
+        <button class="nav-item" data-page="unit-edit">修改血糖单位</button>
+        <button class="nav-item" data-page="basic-profile">基础信息</button>
+        <button class="nav-item" data-page="account">账号与安全</button>
+        <button class="nav-item" data-page="dialogs">弹窗与异常提示</button>
+      </nav>
+      <div class="legend">
+        <span><i class="dot add"></i>新增</span>
+        <span><i class="dot change"></i>改造</span>
+      </div>
+    </aside>
+
+    <main class="stage">
+      <section class="page active" id="unit-bind">
+        <div class="page-head">
+          <div>
+            <span class="tag add">新增页面</span>
+            <h2>绑定阶段：血糖单位选择</h2>
+            <p>用户第一次绑定设备时选择一次，减少后续设备屏幕和 App 单位不一致的风险。</p>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone-status"></div>
+          <div class="phone-nav"><span>‹</span><strong>血糖单位</strong><span></span></div>
+          <div class="content">
+            <h3>选择血糖单位</h3>
+            <p class="sub">设备和 App 将按所选单位显示血糖值。</p>
+            <div class="option selected">
+              <div>
+                <strong>mmol/L</strong>
+              </div>
+              <span class="radio on"></span>
+            </div>
+            <div class="option">
+              <div>
+                <strong>mg/dL</strong>
+              </div>
+              <span class="radio"></span>
+            </div>
+            <div class="tip">选择后仍可在“我的”中修改。</div>
+          </div>
+          <button class="primary bottom">下一步</button>
+        </div>
+        <aside class="notes">
+          <h3>页面说明</h3>
+          <p>1. 默认选中 mmol/L。</p>
+          <p>2. 本页加在“血糖源设置”绑定成功之后。</p>
+          <p>3. 点击“下一步”保存单位，并进入“模式设置与预览”。</p>
+          <p>4. 若用户从 mg/dL 切回 mmol/L，需要同步更新阈值展示。</p>
+          <p>5. 血糖单位换算公式：mmol/L 转 mg/dL = 数值 × 18；mg/dL 转 mmol/L = 数值 ÷ 18。</p>
+        </aside>
+      </section>
+
+      <section class="page" id="mode">
+        <div class="page-head">
+          <div>
+            <span class="tag change">改造页面</span>
+            <h2>模式设置与预览</h2>
+            <p>基于现有页面新增显示与声音、报警方式、警报音模式和小睡功能。</p>
+          </div>
+        </div>
+        <div class="screen-image-wrap">
+          <img class="screen-image" src="./mode-settings-preview-v2.png" alt="模式设置与预览新增功能页面" />
+        </div>
+        <aside class="notes">
+          <h3>页面说明</h3>
+          <p>1. 关闭“声音警报”后，“警报音模式”置灰不可选；重新打开“声音警报”后恢复可选。</p>
+          <p>2. 小睡功能关闭时，“小睡时长”置灰不可编辑。</p>
+          <p>3. 报警方式关闭时实时校验：无论用户按什么顺序关闭，当只剩最后一种报警方式开启时，若用户继续关闭最后一个开关，则弹出“确认关闭全部报警方式”弹窗。</p>
+        </aside>
+      </section>
+
+      <section class="page" id="mine">
+        <div class="page-head">
+          <div>
+            <span class="tag add">新增 Tab</span>
+            <h2>我的</h2>
+            <p>承载后续修改血糖单位、AI 资料入口和账号相关功能，避免继续挤在设备设置页里。</p>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone-status"></div>
+          <div class="phone-title">我的</div>
+          <div class="list-card">
+            <div class="list-row"><span>血糖单位</span><b>mmol/L ›</b></div>
+            <div class="list-row"><span>基础信息</span><b>›</b></div>
+            <div class="list-row"><span>账号与安全</span><b>›</b></div>
+          </div>
+          <div class="list-card">
+            <div class="list-row"><span>我的设备</span><b>1 台 ›</b></div>
+          </div>
+          <button class="logout-btn">退出登录</button>
+          <div class="tabbar">
+            <button>设备</button>
+            <button class="active">我的</button>
+          </div>
+        </div>
+        <aside class="notes">
+          <h3>页面说明</h3>
+          <p>1. 底部新增“我的”Tab。</p>
+          <p>2. 底部“设备”Tab 承载目前已开发的所有设备相关功能。</p>
+          <p>3. “我的设备”和底部“设备”Tab 进入同一个设备列表 / 设备管理页面，即现有“我的设备”页。</p>
+          <p>4. 退出登录从原设备列表页迁移到“我的”页底部，沿用现有退出登录能力。</p>
+        </aside>
+      </section>
+
+      <section class="page" id="unit-edit">
+        <div class="page-head">
+          <div>
+            <span class="tag add">新增页面</span>
+            <h2>后续修改：血糖单位</h2>
+            <p>从“我的”进入，修改后同步影响 App 与设备展示。</p>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone-status"></div>
+          <div class="phone-nav"><span>‹</span><strong>血糖单位</strong><span></span></div>
+          <div class="content">
+            <h3>选择血糖单位</h3>
+            <p class="sub">设备和 App 将按所选单位显示血糖值。</p>
+            <div class="option selected">
+              <div>
+                <strong>mmol/L</strong>
+              </div>
+              <span class="radio on"></span>
+            </div>
+            <div class="option">
+              <div>
+                <strong>mg/dL</strong>
+              </div>
+              <span class="radio"></span>
+            </div>
+          </div>
+          <button class="primary bottom">保存</button>
+        </div>
+        <aside class="notes">
+          <h3>页面说明</h3>
+          <p>1. 保存后返回“我的”，展示最新单位。</p>
+          <p>2. 血糖单位换算公式：mmol/L 转 mg/dL = 数值 × 18；mg/dL 转 mmol/L = 数值 ÷ 18。</p>
+        </aside>
+      </section>
+
+      <section class="page" id="basic-profile">
+        <div class="page-head">
+          <div>
+            <span class="tag add">启用 AI 时触发</span>
+            <h2>基础信息</h2>
+            <p>不放在注册后强制填写；仅当用户启用 AI 功能时，为了让 AI 理解用户背景再填写。</p>
+          </div>
+        </div>
+        <div class="phone tall">
+          <div class="phone-status"></div>
+          <div class="phone-nav"><span>‹</span><strong>基础信息</strong><span></span></div>
+          <div class="content">
+            <h3>让糖宝更懂您</h3>
+            <p class="sub">完善基础信息后，糖宝可结合您的血糖与健康资料，提供更个体化的分析与建议。</p>
+            <div class="form-group">
+              <div class="field"><label>希望糖宝怎么称呼您</label><div>请输入</div></div>
+              <div class="field"><label><span class="req">*</span>性别</label><div>请选择</div></div>
+              <div class="field"><label><span class="req">*</span>出生日期</label><div>请选择</div></div>
+              <div class="field"><label><span class="req">*</span>身高</label><div>请输入 cm</div></div>
+              <div class="field"><label><span class="req">*</span>体重</label><div>请输入 kg</div></div>
+              <div class="field"><label><span class="req">*</span>患病类型</label><div>请选择</div></div>
+              <div class="field"><label><span class="req">*</span>确诊时间</label><div>请选择</div></div>
+              <div class="field therapy-field">
+                <label><span class="req">*</span>治疗方案</label>
+                <div class="therapy-options">
+                  <span class="therapy-chip selected">胰岛素泵</span>
+                  <span class="therapy-chip">餐前+基础</span>
+                  <span class="therapy-chip">预混</span>
+                  <span class="therapy-chip">降糖药物治疗</span>
+                  <span class="therapy-chip">生活方式干预</span>
+                  <span class="therapy-chip">周制剂</span>
+                  <span class="therapy-chip wide">混合闭环胰岛素输注系统 AAPS</span>
+                  <span class="therapy-chip wide">混合闭环胰岛素输注系统 LOOP</span>
+                </div>
+                <div class="therapy-subfields">
+                  <div><span>胰岛素类型</span><b>›</b></div>
+                  <div><span>胰岛素泵类型</span><b>›</b></div>
+                  <div><span>血糖监测</span><b>›</b></div>
+                </div>
+              </div>
+            </div>
+            <div class="tip">这些信息仅用于糖宝后续交流时参考，不会用于其他用途，也不会向任何第三方共享，请放心填写。</div>
+          </div>
+          <button class="primary sticky">保存</button>
+        </div>
+        <aside class="notes">
+          <h3>页面说明</h3>
+          <p>1. “希望糖宝怎么称呼您”为选填，其余字段均为必填。</p>
+          <p>2. 希望糖宝怎么称呼您：文本输入。</p>
+          <p>3. 性别：单选，男、女。</p>
+          <p>4. 出生日期、确诊时间：年月日选择器。</p>
+          <p>5. 身高、体重：数字输入，身高用于后续计算 BMI。</p>
+          <p>6. 患病类型：T1DM（1型糖尿病）、T2DM（2型糖尿病）、GDM（妊娠糖尿病）、其他类型糖尿病。</p>
+          <p>7. 治疗方案：胰岛素泵、餐前+基础、降糖药物治疗、生活方式干预、预混、周制剂、混合闭环胰岛素输注系统AAPS、混合闭环胰岛素输注系统LOOP。</p>
+          <p>8. 治疗方案选中后，按方案继续展示对应子选项。本页仅示意“胰岛素泵”选中后展示“胰岛素类型、胰岛素泵类型、血糖监测”；其余方案的子项直接参考糖糖圈 App 既有治疗方案表单。</p>
+        </aside>
+      </section>
+
+      <section class="page" id="account">
+        <div class="page-head">
+          <div>
+            <span class="tag add">新增入口</span>
+            <h2>账号与安全</h2>
+            <p>本期只承载已实现的密码相关能力，不扩展更多账号安全项。</p>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone-status"></div>
+          <div class="phone-nav"><span>‹</span><strong>账号与安全</strong><span></span></div>
+          <div class="list-card account-card">
+            <div class="list-row"><span>密码设置</span><b>›</b></div>
+          </div>
+        </div>
+        <aside class="notes">
+          <h3>页面说明</h3>
+          <p>1. 从“我的 - 账号与安全”进入。</p>
+          <p>2. 点击“密码设置”进入现有“设置新密码”页。</p>
+        </aside>
+      </section>
+
+      <section class="page" id="dialogs">
+        <div class="page-head">
+          <div>
+            <span class="tag risk">规则提示</span>
+            <h2>弹窗与异常提示</h2>
+          </div>
+        </div>
+        <div class="dialog-grid">
+          <div class="phone small">
+            <div class="phone-status"></div>
+            <div class="modal">
+              <h3>确认关闭全部报警方式？</h3>
+              <p>关闭后，设备可能无法在血糖异常时提醒你。建议至少保留一种报警方式。</p>
+              <button class="primary">保留报警</button>
+              <button class="ghost">仍要关闭</button>
+            </div>
+          </div>
+        </div>
+        <aside class="notes inline">
+          <h3>页面说明</h3>
+          <p>1. 当前仅保留“确认关闭全部报警方式”弹窗。</p>
+          <p>2. 点击“保留报警”：关闭弹窗，最后一种报警方式保持开启。</p>
+          <p>3. 点击“仍要关闭”：关闭最后一种报警方式，返回设置页。</p>
+        </aside>
+      </section>
+    </main>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
+

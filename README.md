@@ -1,5 +1,7 @@
 # 糖哨兵 App 新增功能线框原型
 
+线上预览：https://mosyoung0710-ai.github.io/tangshaobing-app-wireframe/
+
 打开方式：双击 `index.html` 即可在浏览器查看；发布后也可通过 GitHub Pages 链接查看。
 
 本版覆盖页面：

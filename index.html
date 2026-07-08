@@ -255,7 +255,7 @@
           <div>
             <span class="tag add">新增页面</span>
             <h2>多语言</h2>
-            <p>从“我的”进入，用户可手动切换 App 展示语言。本期不做“跟随系统”。</p>
+            <p>从“我的”进入，用户可手动切换 App 展示语言。</p>
           </div>
         </div>
         <div class="phone">
@@ -269,13 +269,13 @@
         <aside class="notes">
           <h3>页面说明</h3>
           <p>1. 入口：从“我的 - 多语言”进入。</p>
-          <p>2. 本期仅支持“简体中文”和“English”，不提供“跟随系统”选项。</p>
-          <p>3. 首次安装默认使用 App 预设语言；7 月欧洲演示包可预设为 English。</p>
+          <p>2. 页面选项为“简体中文”和“English”。</p>
+          <p>3. 首次启动时按手机系统语言初始化：系统语言为英语时默认 English；其他语言默认简体中文。用户保存语言后，再次进入按已保存语言展示。</p>
           <p>4. 进入页面时展示当前已设置语言；当前语言用对勾标识。</p>
           <p>5. 未选择另一种语言时，“确定”按钮不可点击；选择另一种语言后，“确定”按钮可点击。</p>
           <p>6. 点击“确定”后保存语言设置，并重新加载 App 语言包；保存成功后返回“我的”。</p>
           <p>7. 保存失败时，保持当前语言不变，并 toast 提示“保存失败，请重试”。</p>
-          <p>8. 切换语言后，App 内页面文案、设备相关设置文案和弹窗文案同步切换；设备屏幕文案是否同步切换需固件确认。</p>
+          <p>8. 语言切换范围仅覆盖 App 内页面文案、设备相关设置文案和弹窗文案；设备屏幕保持现有语言。</p>
         </aside>
       </section>
 
@@ -289,17 +289,22 @@
         </div>
         <div class="copy-board">
           <div class="copy-section">
-            <h3>全局与导航</h3>
+            <h3>通用与导航</h3>
             <table class="copy-table">
               <tr><th>中文</th><th>英文建议</th></tr>
-              <tr><td>糖哨兵 App</td><td>GluSentry App</td></tr>
-              <tr><td>一期剩余功能线框原型</td><td>Phase 1 Remaining Feature Wireframes</td></tr>
               <tr><td>设备</td><td>Device</td></tr>
               <tr><td>我的</td><td>Me</td></tr>
+              <tr><td>设置</td><td>Settings</td></tr>
               <tr><td>下一步</td><td>Next</td></tr>
               <tr><td>保存</td><td>Save</td></tr>
               <tr><td>完成</td><td>Done</td></tr>
               <tr><td>确定</td><td>Confirm</td></tr>
+              <tr><td>加载中</td><td>Loading...</td></tr>
+              <tr><td>设置中</td><td>Setting up...</td></tr>
+              <tr><td>保存中</td><td>Saving...</td></tr>
+              <tr><td>请稍候</td><td>Please wait.</td></tr>
+              <tr><td>重试</td><td>Retry</td></tr>
+              <tr><td>暂无数据</td><td>No data</td></tr>
             </table>
           </div>
 

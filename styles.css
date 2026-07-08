@@ -200,7 +200,7 @@ button {
 
 .phone-nav {
   display: grid;
-  grid-template-columns: 30px 1fr 30px;
+  grid-template-columns: 52px 1fr 52px;
   align-items: center;
   height: 34px;
   margin-bottom: 20px;
@@ -215,6 +215,8 @@ button {
   background: transparent;
   font-size: 13px;
   font-weight: 700;
+  white-space: nowrap;
+  text-align: right;
 }
 
 .nav-action.disabled {

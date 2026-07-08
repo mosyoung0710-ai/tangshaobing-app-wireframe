@@ -117,6 +117,7 @@ button {
   grid-template-columns: minmax(360px, 430px) minmax(280px, 380px);
   align-items: start;
   gap: 28px;
+  position: relative;
 }
 
 .page.active {
@@ -178,6 +179,7 @@ button {
   border-radius: 12px;
   background: #ffffff;
   box-shadow: 0 16px 40px rgba(20, 30, 50, 0.12);
+  position: relative;
 }
 
 .screen-image {
@@ -334,15 +336,73 @@ button {
   color: #344054;
 }
 
+.notes p.note-callout {
+  position: relative;
+  padding: 10px 10px 10px 38px;
+  border: 1px solid #e6ebf3;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.notes p.note-callout::before {
+  content: attr(data-callout);
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.callout-dot {
+  position: absolute;
+  z-index: 5;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: var(--blue);
+  box-shadow: 0 0 0 3px rgba(60, 124, 197, 0.14);
+  font-size: 12px;
+  font-weight: 800;
+  pointer-events: none;
+}
+
+.callout-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.callout-layer path {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0.72;
+}
+
+.phone,
+.screen-image-wrap,
+.dialog-grid {
+  isolation: isolate;
+}
+
 .notes .warn {
   color: #9a3412;
   background: #fff7ed;
   border-left: 3px solid var(--orange);
   padding: 8px 10px;
-}
-
-.notes.inline {
-  grid-column: 1 / -1;
 }
 
 .stepper {
@@ -779,7 +839,6 @@ button {
 }
 
 .dialog-grid {
-  grid-column: 1 / -1;
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
@@ -813,7 +872,7 @@ button {
 }
 
 .copy-page {
-  grid-template-columns: minmax(560px, 760px) minmax(280px, 380px);
+  grid-template-columns: minmax(560px, 1fr);
 }
 
 .copy-board {

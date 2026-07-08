@@ -17,11 +17,11 @@
         </div>
       </div>
       <nav class="nav" aria-label="页面导航">
-        <button class="nav-item active" data-page="unit-bind">绑定阶段：血糖单位</button>
+        <button class="nav-item active" data-page="basic-profile">基础信息</button>
+        <button class="nav-item" data-page="unit-bind">绑定阶段：血糖单位</button>
         <button class="nav-item" data-page="mode">模式设置与预览</button>
         <button class="nav-item" data-page="mine">我的</button>
         <button class="nav-item" data-page="unit-edit">修改血糖单位</button>
-        <button class="nav-item" data-page="basic-profile">基础信息</button>
         <button class="nav-item" data-page="account">账号与安全</button>
         <button class="nav-item" data-page="language">多语言</button>
         <button class="nav-item" data-page="english-copy">英文文案清单</button>
@@ -34,7 +34,7 @@
     </aside>
 
     <main class="stage">
-      <section class="page active" id="unit-bind">
+      <section class="page" id="unit-bind">
         <div class="page-head">
           <div>
             <span class="tag add">新增页面</span>
@@ -43,6 +43,8 @@
           </div>
         </div>
         <div class="phone">
+          <span class="callout-dot" data-callout="1" style="top: 188px; right: -14px;">1</span>
+          <span class="callout-dot" data-callout="3" style="bottom: 38px; right: 32px;">3</span>
           <div class="phone-status"></div>
           <div class="phone-nav"><span>‹</span><strong>血糖单位</strong><span></span></div>
           <div class="content">
@@ -83,7 +85,7 @@
           </div>
         </div>
         <div class="screen-image-wrap">
-          <img class="screen-image" src="./mode-settings-preview-v2.png" alt="模式设置与预览新增功能页面" />
+          <img class="screen-image" src="./模式设置与预览_现有页面基础新增功能_v2.png" alt="模式设置与预览新增功能页面" />
         </div>
         <aside class="notes">
           <h3>页面说明</h3>
@@ -106,8 +108,8 @@
           <div class="phone-status"></div>
           <div class="phone-title">我的</div>
           <div class="list-card">
-            <div class="list-row"><span>血糖单位</span><b>mmol/L ›</b></div>
             <div class="list-row"><span>基础信息</span><b>›</b></div>
+            <div class="list-row"><span>血糖单位</span><b>mmol/L ›</b></div>
           </div>
           <div class="list-card">
             <div class="list-row"><span>账号与安全</span><b>›</b></div>
@@ -143,6 +145,7 @@
           </div>
         </div>
         <div class="phone">
+          <span class="callout-dot" data-callout="1" style="bottom: 38px; right: 32px;">1</span>
           <div class="phone-status"></div>
           <div class="phone-nav"><span>‹</span><strong>血糖单位</strong><span></span></div>
           <div class="content">
@@ -170,12 +173,12 @@
         </aside>
       </section>
 
-      <section class="page" id="basic-profile">
+      <section class="page active" id="basic-profile">
         <div class="page-head">
           <div>
-            <span class="tag add">启用 AI 时触发</span>
+            <span class="tag add">注册后填写</span>
             <h2>基础信息</h2>
-            <p>不放在注册后强制填写；仅当用户启用 AI 功能时，为了让 AI 理解用户背景再填写。</p>
+            <p>注册后先连接设备并完成 Wi-Fi 设置，再引导用户填写基础信息，便于糖宝后续提供个体化分析与建议。</p>
           </div>
         </div>
         <div class="phone tall">
@@ -184,6 +187,7 @@
           <div class="content">
             <h3>让糖宝更懂您</h3>
             <p class="sub">完善基础信息后，糖宝可结合您的血糖与健康资料，提供更个体化的分析与建议。</p>
+            <div class="tip light">可稍后从“我的 - 基础信息”修改或补充。</div>
             <div class="form-group">
               <div class="field"><label>希望糖宝怎么称呼您</label><div>请输入</div></div>
               <div class="field"><label><span class="req">*</span>性别</label><div>请选择</div></div>
@@ -197,7 +201,7 @@
                 <div class="therapy-options">
                   <span class="therapy-chip selected">胰岛素泵</span>
                   <span class="therapy-chip">餐前+基础</span>
-                  <span class="therapy-chip">预混</span>
+                  <span class="therapy-chip">预混胰岛素</span>
                   <span class="therapy-chip">降糖药物治疗</span>
                   <span class="therapy-chip">生活方式干预</span>
                   <span class="therapy-chip">周制剂</span>
@@ -216,14 +220,16 @@
         </div>
         <aside class="notes">
           <h3>页面说明</h3>
-          <p>1. “希望糖宝怎么称呼您”为选填，其余字段均为必填。</p>
-          <p>2. 希望糖宝怎么称呼您：文本输入。</p>
-          <p>3. 性别：单选，男、女。</p>
-          <p>4. 出生日期、确诊时间：年月日选择器。</p>
-          <p>5. 身高、体重：数字输入，身高用于后续计算 BMI。</p>
-          <p>6. 患病类型：T1DM（1型糖尿病）、T2DM（2型糖尿病）、GDM（妊娠糖尿病）、其他类型糖尿病。</p>
-          <p>7. 治疗方案：胰岛素泵、餐前+基础、降糖药物治疗、生活方式干预、预混、周制剂、混合闭环胰岛素输注系统。</p>
-          <p>8. 治疗方案选中后，按方案继续展示对应子选项。本页仅示意“胰岛素泵”选中后展示“胰岛素类型、胰岛素泵类型、血糖监测”；其余方案的子项直接参考糖糖圈 App 既有治疗方案表单。</p>
+          <p>1. 入口：注册后完成设备连接和 Wi-Fi 设置后进入本页。</p>
+          <p>2. 填写完成后进入“血糖源设置”；后续修改入口为“我的 - 基础信息”。</p>
+          <p>3. “希望糖宝怎么称呼您”为选填，其余字段均为必填。</p>
+          <p>4. 希望糖宝怎么称呼您：文本输入。</p>
+          <p>5. 性别：单选，男、女。</p>
+          <p>6. 出生日期：年月日选择器；确诊时间：按患病时长选择。</p>
+          <p>7. 身高、体重：数字输入，身高用于后续计算 BMI。</p>
+          <p>8. 患病类型：T1DM（1型糖尿病）、T2DM（2型糖尿病）、GDM（妊娠糖尿病）、其他类型糖尿病。</p>
+          <p>9. 治疗方案：胰岛素泵、餐前+基础、降糖药物治疗、生活方式干预、预混胰岛素、周制剂、混合闭环胰岛素输注系统。</p>
+          <p>10. 治疗方案选中后，按方案继续展示对应子选项。本页仅示意“胰岛素泵”选中后展示“胰岛素类型、胰岛素泵类型、血糖监测”；其余方案的子项直接参考糖糖圈 App 既有治疗方案表单。</p>
         </aside>
       </section>
 
@@ -236,6 +242,7 @@
           </div>
         </div>
         <div class="phone">
+          <span class="callout-dot" data-callout="2" style="top: 128px; right: -14px;">2</span>
           <div class="phone-status"></div>
           <div class="phone-nav"><span>‹</span><strong>账号与安全</strong><span></span></div>
           <div class="list-card account-card">
@@ -258,6 +265,9 @@
           </div>
         </div>
         <div class="phone">
+          <span class="callout-dot" data-callout="4" style="top: 144px; right: 64px;">4</span>
+          <span class="callout-dot" data-callout="5" style="top: 54px; right: -14px;">5</span>
+          <span class="callout-dot" data-callout="6" style="top: 86px; right: -14px;">6</span>
           <div class="phone-status"></div>
           <div class="phone-nav"><span>‹</span><strong>多语言</strong><button class="nav-action disabled">确定</button></div>
           <div class="language-list">
@@ -323,27 +333,27 @@
               <tr><th>中文</th><th>英文建议</th></tr>
               <tr><td>验证码登录</td><td>Sign in with Code</td></tr>
               <tr><td>密码登录</td><td>Sign in with Password</td></tr>
-              <tr><td>请输入手机号码</td><td>Mobile number</td></tr>
+              <tr><td>请输入手机号码</td><td>Phone number</td></tr>
               <tr><td>请输入账号密码</td><td>Password</td></tr>
               <tr><td>请输入验证码</td><td>Verification code</td></tr>
-              <tr><td>获取验证码</td><td>Get Code</td></tr>
+              <tr><td>获取验证码</td><td>Get code</td></tr>
               <tr><td>52s 后重发</td><td>Resend in 52s</td></tr>
               <tr><td>登录</td><td>Sign In</td></tr>
               <tr><td>忘记密码？</td><td>Forgot password?</td></tr>
-              <tr><td>没有账号？</td><td>No account?</td></tr>
-              <tr><td>立即注册</td><td>Register Now</td></tr>
+              <tr><td>没有账号？</td><td>Don’t have an account?</td></tr>
+              <tr><td>立即注册</td><td>Sign Up</td></tr>
               <tr><td>已有账号？</td><td>Already have an account?</td></tr>
               <tr><td>去登录</td><td>Sign In</td></tr>
-              <tr><td>未注册的手机号验证通过后将自动注册并登录</td><td>Unregistered mobile numbers will be registered and signed in automatically after verification.</td></tr>
+              <tr><td>未注册的手机号验证通过后将自动注册并登录</td><td>Unregistered numbers will be automatically signed up and logged in.</td></tr>
               <tr><td>我已阅读并同意《糖哨兵服务条款》和《隐私政策》</td><td>I have read and agree to the GluSentry Terms of Service and Privacy Policy.</td></tr>
               <tr><td>《糖哨兵服务条款》</td><td>GluSentry Terms of Service</td></tr>
               <tr><td>《隐私政策》</td><td>Privacy Policy</td></tr>
               <tr><td>同意并继续</td><td>Agree and Continue</td></tr>
-              <tr><td>请输入正确手机号码</td><td>Use a valid mobile number.</td></tr>
+              <tr><td>请输入正确手机号码</td><td>Enter a valid phone number.</td></tr>
               <tr><td>请输入正确密码</td><td>Check your password.</td></tr>
               <tr><td>验证码已超时/验证码错误/验证码失效</td><td>Verification code expired / incorrect / invalid.</td></tr>
               <tr><td>欢迎注册糖哨兵</td><td>Welcome to GluSentry</td></tr>
-              <tr><td>请输入 6–16 位密码，支持数字、字母及符号</td><td>Use 6–16 characters, including numbers, letters, or symbols.</td></tr>
+              <tr><td>请输入 6–16 位密码，支持数字、字母及符号</td><td>Use 6–16 characters. Numbers, letters, and symbols are supported.</td></tr>
               <tr><td>忘记密码</td><td>Forgot Password</td></tr>
               <tr><td>请输入手机号码和验证码</td><td>Use your mobile number and verification code.</td></tr>
               <tr><td>设置新密码</td><td>Set New Password</td></tr>
@@ -352,7 +362,7 @@
               <tr><td>请输入新密码</td><td>New password</td></tr>
               <tr><td>请再次输入密码</td><td>Confirm password</td></tr>
               <tr><td>密码长度不能少于 6 位</td><td>Password must be at least 6 characters.</td></tr>
-              <tr><td>两次密码不一致，请检查</td><td>Passwords do not match. Please check.</td></tr>
+              <tr><td>两次密码不一致，请检查</td><td>Passwords do not match.</td></tr>
             </table>
           </div>
 
@@ -366,7 +376,7 @@
               <tr><td>未找到您的设备？</td><td>Can’t find your device?</td></tr>
               <tr><td>重新扫描</td><td>Scan Again</td></tr>
               <tr><td>连接</td><td>Connect</td></tr>
-              <tr><td>未搜索到设备</td><td>No device found</td></tr>
+              <tr><td>未搜索到设备</td><td>No devices found.</td></tr>
               <tr><td>请检查设备是否处于可发现状态</td><td>Make sure the device is discoverable.</td></tr>
               <tr><td>请将手机尽量靠近要添加的设备</td><td>Keep your phone close to the device you want to add.</td></tr>
               <tr><td>重新搜索</td><td>Search Again</td></tr>
@@ -383,18 +393,18 @@
               <tr><th>中文</th><th>英文建议</th></tr>
               <tr><td>Wi-Fi设置</td><td>Wi-Fi Settings</td></tr>
               <tr><td>Wi-Fi 设置</td><td>Wi-Fi Settings</td></tr>
-              <tr><td>请选择Wi-Fi</td><td>Select Wi-Fi</td></tr>
-              <tr><td>选择Wi-Fi</td><td>Select Wi-Fi</td></tr>
-              <tr><td>选择 Wi-Fi</td><td>Select Wi-Fi</td></tr>
-              <tr><td>更换Wi-Fi</td><td>Change Wi-Fi</td></tr>
+              <tr><td>请选择Wi-Fi</td><td>Choose a Wi-Fi network</td></tr>
+              <tr><td>选择Wi-Fi</td><td>Choose a Wi-Fi network</td></tr>
+              <tr><td>选择 Wi-Fi</td><td>Choose a Wi-Fi network</td></tr>
+              <tr><td>更换Wi-Fi</td><td>Change Wi-Fi network</td></tr>
               <tr><td>请输入Wi-Fi密码</td><td>Wi-Fi password</td></tr>
               <tr><td>取消</td><td>Cancel</td></tr>
               <tr><td>确定</td><td>Confirm</td></tr>
               <tr><td>连接失败</td><td>Connection failed</td></tr>
               <tr><td>设备无响应，请将设备靠近路由器重试</td><td>Device not responding. Move the device closer to the router and try again.</td></tr>
-              <tr><td>Wi-Fi已连接成功</td><td>Wi-Fi connected successfully</td></tr>
+              <tr><td>Wi-Fi已连接成功</td><td>Wi-Fi connected</td></tr>
               <tr><td>已连接</td><td>Connected</td></tr>
-              <tr><td>修改Wi-Fi</td><td>Change Wi-Fi</td></tr>
+              <tr><td>修改Wi-Fi</td><td>Change Wi-Fi network</td></tr>
             </table>
           </div>
 
@@ -403,15 +413,15 @@
             <table class="copy-table">
               <tr><th>中文</th><th>英文建议</th></tr>
               <tr><td>血糖源设置</td><td>CGM Connection</td></tr>
-              <tr><td>输入手机号以查询NS账号</td><td>Mobile number for NS account lookup.</td></tr>
-              <tr><td>请输入手机号</td><td>Mobile number</td></tr>
+              <tr><td>输入手机号以查询NS账号</td><td>Enter the mobile number linked to your Nightscout account.</td></tr>
+              <tr><td>请输入手机号</td><td>Phone number</td></tr>
               <tr><td>请输入验证码</td><td>Verification code</td></tr>
-              <tr><td>获取验证码</td><td>Get Code</td></tr>
+              <tr><td>获取验证码</td><td>Get code</td></tr>
               <tr><td>查询</td><td>Search</td></tr>
               <tr><td>23 秒后重发</td><td>Resend in 23s</td></tr>
-              <tr><td>绑定</td><td>Bind</td></tr>
-              <tr><td>NS绑定成功</td><td>NS bound successfully</td></tr>
-              <tr><td>已绑定NS</td><td>NS Bound</td></tr>
+              <tr><td>绑定</td><td>Connect</td></tr>
+              <tr><td>NS绑定成功</td><td>Connected successfully</td></tr>
+              <tr><td>已绑定NS</td><td>Nightscout Connected</td></tr>
               <tr><td>NS网址</td><td>NS URL</td></tr>
               <tr><td>修改血糖源</td><td>Change CGM Connection</td></tr>
             </table>
@@ -421,15 +431,15 @@
             <h3>页面：设备详情 / 我的设备 / 解绑设备（对应设计图 31-36、54）</h3>
             <table class="copy-table">
               <tr><th>中文</th><th>英文建议</th></tr>
-              <tr><td>我的设备</td><td>My Device</td></tr>
+              <tr><td>我的设备</td><td>My Devices</td></tr>
               <tr><td>糖哨兵</td><td>GluSentry</td></tr>
               <tr><td>设备已离线</td><td>Device offline</td></tr>
               <tr><td>添加其他设备</td><td>Add Another Device</td></tr>
               <tr><td>Wi-Fi设置</td><td>Wi-Fi Settings</td></tr>
               <tr><td>血糖源设置</td><td>CGM Connection</td></tr>
               <tr><td>模式设置与预览</td><td>Mode Settings &amp; Preview</td></tr>
-              <tr><td>解绑设备</td><td>Unbind Device</td></tr>
-              <tr><td>确定解绑设备吗？</td><td>Unbind this device?</td></tr>
+              <tr><td>解绑设备</td><td>Unpair Device</td></tr>
+              <tr><td>确定解绑设备吗？</td><td>Unpair this device?</td></tr>
               <tr><td>蓝牙已断开，尝试连接中...</td><td>Bluetooth disconnected. Reconnecting...</td></tr>
               <tr><td>蓝牙未打开</td><td>Bluetooth is off</td></tr>
               <tr><td>请确保设备已开机并在蓝牙范围内</td><td>Make sure the device is powered on and within Bluetooth range.</td></tr>
@@ -443,10 +453,10 @@
             <h3>页面：Units（新增绑定阶段与“我的”修改入口）</h3>
             <table class="copy-table">
               <tr><th>中文</th><th>英文建议</th></tr>
-              <tr><td>血糖单位</td><td>Units</td></tr>
-              <tr><td>选择血糖单位</td><td>Select Units</td></tr>
+              <tr><td>血糖单位</td><td>Glucose Unit</td></tr>
+              <tr><td>选择血糖单位</td><td>Choose Glucose Unit</td></tr>
               <tr><td>设备和 App 将按所选单位显示血糖值。</td><td>The device and app will display readings in the selected unit.</td></tr>
-              <tr><td>选择后仍可在“我的”中修改。</td><td>You can change this later in Me.</td></tr>
+              <tr><td>选择后仍可在“我的”中修改。</td><td>You can change this later from Me.</td></tr>
             </table>
           </div>
 
@@ -455,7 +465,7 @@
             <table class="copy-table">
               <tr><th>中文</th><th>英文建议</th></tr>
               <tr><td>模式设置与预览</td><td>Mode Settings &amp; Preview</td></tr>
-              <tr><td>工作模式</td><td>Work Mode</td></tr>
+              <tr><td>工作模式</td><td>At work</td></tr>
               <tr><td>居家模式</td><td>Home Mode</td></tr>
               <tr><td>展示预览</td><td>Display Preview</td></tr>
               <tr><td>正常状态</td><td>In Range</td></tr>
@@ -472,22 +482,22 @@
               <tr><td>低血糖</td><td>Low Glucose</td></tr>
               <tr><td>无数据</td><td>No Data</td></tr>
               <tr><td>设备离线</td><td>Device Offline</td></tr>
-              <tr><td>报警方式</td><td>Alarm Methods</td></tr>
-              <tr><td>声音警报</td><td>Sound Alarm</td></tr>
-              <tr><td>屏幕闪烁警报</td><td>Screen Flash Alarm</td></tr>
-              <tr><td>振动警报</td><td>Vibration Alarm</td></tr>
-              <tr><td>设备发光</td><td>Device Glow</td></tr>
-              <tr><td>开启后，设备平常发暖黄色光，报警时发橙红色光。</td><td>When enabled, the device glows warm yellow normally and orange-red during alarms.</td></tr>
-              <tr><td>警报音模式</td><td>Alarm Sound Mode</td></tr>
+              <tr><td>报警方式</td><td>Alert Preferences</td></tr>
+              <tr><td>声音警报</td><td>Sound</td></tr>
+              <tr><td>屏幕闪烁警报</td><td>Screen Flash</td></tr>
+              <tr><td>振动警报</td><td>Vibration</td></tr>
+              <tr><td>设备发光</td><td>Glow Light</td></tr>
+              <tr><td>开启后，设备平常发暖黄色光，报警时发橙红色光。</td><td>When enabled, the device glows warm yellow normally and orange-red during alerts.</td></tr>
+              <tr><td>警报音模式</td><td>Alert sound pattern</td></tr>
               <tr><td>规律</td><td>Regular</td></tr>
               <tr><td>随机</td><td>Random</td></tr>
               <tr><td>小睡功能</td><td>Snooze</td></tr>
-              <tr><td>小睡时长</td><td>Snooze Duration</td></tr>
-              <tr><td>开启后，短按功能键可暂停报警；小睡结束后，若仍超阈值将恢复报警。</td><td>When enabled, press the device function button to pause alarms. If the alarm condition is still active after the snooze duration ends, alarms will resume.</td></tr>
+              <tr><td>小睡时长</td><td>Snooze duration</td></tr>
+              <tr><td>开启后，短按功能键可暂停报警；小睡结束后，若仍超阈值将恢复报警。</td><td>When enabled, briefly press the function button to pause alerts. Alerts will resume after the snooze period if the condition persists.</td></tr>
               <tr><td>应用</td><td>Apply</td></tr>
               <tr><td>已应用</td><td>Applied</td></tr>
-              <tr><td>温馨提示</td><td>Notice</td></tr>
-              <tr><td>您已修改了警报设置，但尚未保存，这些修改将不会生效，是否继续？</td><td>You have changed the alert settings but have not saved them. These changes will not take effect. Continue?</td></tr>
+              <tr><td>温馨提示</td><td>Heads Up</td></tr>
+              <tr><td>您已修改了警报设置，但尚未保存，这些修改将不会生效，是否继续？</td><td>You have unsaved changes to your alert settings. Continue without saving?</td></tr>
               <tr><td>保存失败，请检查网络连接</td><td>Save failed. Check your network connection.</td></tr>
             </table>
           </div>
@@ -497,10 +507,10 @@
             <table class="copy-table">
               <tr><th>中文</th><th>英文建议</th></tr>
               <tr><td>我的</td><td>Me</td></tr>
-              <tr><td>基础信息</td><td>Basic Information</td></tr>
+              <tr><td>基础信息</td><td>Profile information</td></tr>
               <tr><td>账号与安全</td><td>Account &amp; Security</td></tr>
               <tr><td>多语言</td><td>Language</td></tr>
-              <tr><td>我的设备</td><td>My Device</td></tr>
+              <tr><td>我的设备</td><td>My Devices</td></tr>
               <tr><td>退出登录</td><td>Sign Out</td></tr>
               <tr><td>密码设置</td><td>Password Settings</td></tr>
             </table>
@@ -510,36 +520,36 @@
             <h3>页面：基础信息（新增，供糖宝参考）</h3>
             <table class="copy-table">
               <tr><th>中文</th><th>英文建议</th></tr>
-              <tr><td>基础信息</td><td>Basic Information</td></tr>
+              <tr><td>基础信息</td><td>Profile information</td></tr>
               <tr><td>让糖宝更懂您</td><td>Help Tangbao Understand You Better</td></tr>
-              <tr><td>完善基础信息后，糖宝可结合您的血糖与健康资料，提供更个体化的分析与建议。</td><td>Complete your basic information so Tangbao can provide more personalised insights and suggestions based on your glucose and health profile.</td></tr>
-              <tr><td>希望糖宝怎么称呼您</td><td>What would you like Tangbao to call you?</td></tr>
-              <tr><td>性别</td><td>Sex</td></tr>
+              <tr><td>完善基础信息后，糖宝可结合您的血糖与健康资料，提供更个体化的分析与建议。</td><td>This information you provide helps customize Tangbao to benefit you most.</td></tr>
+              <tr><td>可稍后从“我的 - 基础信息”修改或补充。</td><td>You can change your personal info any time from Me → Profile information.</td></tr>
+              <tr><td>希望糖宝怎么称呼您</td><td>What should Tangbao call you?</td></tr>
+              <tr><td>性别</td><td>Gender</td></tr>
               <tr><td>男</td><td>Male</td></tr>
               <tr><td>女</td><td>Female</td></tr>
               <tr><td>出生日期</td><td>Date of Birth</td></tr>
               <tr><td>身高</td><td>Height</td></tr>
               <tr><td>体重</td><td>Weight</td></tr>
-              <tr><td>患病类型</td><td>Diabetes Type</td></tr>
-              <tr><td>确诊时间</td><td>Diagnosis Date</td></tr>
-              <tr><td>治疗方案</td><td>Treatment Plan</td></tr>
-              <tr><td>请输入</td><td>Input</td></tr>
+              <tr><td>患病类型</td><td>Diabetes type</td></tr>
+              <tr><td>确诊时间</td><td>Time since diagnosis</td></tr>
+              <tr><td>治疗方案</td><td>Treatment plan</td></tr>
               <tr><td>请选择</td><td>Select</td></tr>
-              <tr><td>T1DM（1型糖尿病）</td><td>T1DM (Type 1 Diabetes)</td></tr>
-              <tr><td>T2DM（2型糖尿病）</td><td>T2DM (Type 2 Diabetes)</td></tr>
+              <tr><td>T1DM（1型糖尿病）</td><td>Type 1 Diabetes (T1D)</td></tr>
+              <tr><td>T2DM（2型糖尿病）</td><td>Type 2 Diabetes (T2D)</td></tr>
               <tr><td>GDM（妊娠糖尿病）</td><td>GDM (Gestational Diabetes)</td></tr>
-              <tr><td>其他类型糖尿病</td><td>Other Diabetes Type</td></tr>
-              <tr><td>胰岛素泵</td><td>Insulin Pump</td></tr>
-              <tr><td>餐前+基础</td><td>Bolus + Basal</td></tr>
-              <tr><td>预混</td><td>Premixed Insulin</td></tr>
-              <tr><td>降糖药物治疗</td><td>Glucose-Lowering Medication</td></tr>
-              <tr><td>生活方式干预</td><td>Lifestyle Intervention</td></tr>
-              <tr><td>周制剂</td><td>Weekly Injectable</td></tr>
-              <tr><td>混合闭环胰岛素输注系统</td><td>Hybrid Closed-Loop Insulin Delivery System</td></tr>
-              <tr><td>胰岛素类型</td><td>Insulin Type</td></tr>
-              <tr><td>胰岛素泵类型</td><td>Insulin Pump Type</td></tr>
+              <tr><td>其他类型糖尿病</td><td>Other diabetes</td></tr>
+              <tr><td>胰岛素泵</td><td>Insulin pump</td></tr>
+              <tr><td>餐前+基础</td><td>Basal-bolus insulin</td></tr>
+              <tr><td>预混胰岛素</td><td>Premixed insulin</td></tr>
+              <tr><td>降糖药物治疗</td><td>Glucose-lowering medication</td></tr>
+              <tr><td>生活方式干预</td><td>Lifestyle management</td></tr>
+              <tr><td>周制剂</td><td>Once-weekly injection</td></tr>
+              <tr><td>混合闭环胰岛素输注系统</td><td>Hybrid closed-loop system</td></tr>
+              <tr><td>胰岛素类型</td><td>Insulin type</td></tr>
+              <tr><td>胰岛素泵类型</td><td>Insulin pump type</td></tr>
               <tr><td>血糖监测</td><td>Glucose Monitoring</td></tr>
-              <tr><td>这些信息仅用于糖宝后续交流时参考，不会用于其他用途，也不会向任何第三方共享，请放心填写。</td><td>This information will only be used by Tangbao as context for future conversations. It will not be used for any other purpose or shared with third parties.</td></tr>
+              <tr><td>这些信息仅用于糖宝后续交流时参考，不会用于其他用途，也不会向任何第三方共享，请放心填写。</td><td>This information is strictly used to help Tangbao assist you better. It will never be shared with third parties or used for other purposes.</td></tr>
             </table>
           </div>
 
@@ -548,7 +558,7 @@
             <table class="copy-table">
               <tr><th>中文</th><th>英文建议</th></tr>
               <tr><td>多语言</td><td>Language</td></tr>
-              <tr><td>简体中文</td><td>Simplified Chinese</td></tr>
+              <tr><td>简体中文</td><td>简体中文</td></tr>
               <tr><td>English</td><td>English</td></tr>
               <tr><td>保存失败，请重试</td><td>Couldn’t save. Please try again.</td></tr>
             </table>
@@ -559,20 +569,13 @@
             <table class="copy-table">
               <tr><th>中文</th><th>英文建议</th></tr>
               <tr><td>确认关闭全部报警方式？</td><td>Turn off all alarm methods?</td></tr>
-              <tr><td>关闭后，设备可能无法在警报条件触发时提醒你。建议至少保留一种报警方式。</td><td>If all alarm methods are turned off, the device may not be able to alert you when an alarm condition is triggered. We recommend keeping at least one alarm method enabled.</td></tr>
-              <tr><td>保留报警</td><td>Keep Alarm On</td></tr>
-              <tr><td>仍要关闭</td><td>Turn Off Anyway</td></tr>
+              <tr><td>关闭后，设备可能无法在警报条件触发时提醒你。建议至少保留一种报警方式。</td><td>If you turn off all alert methods, you won't be notified when your glucose is out of range. We recommend keeping at least one method on.</td></tr>
+              <tr><td>保留报警</td><td>Keep alerts on</td></tr>
+              <tr><td>仍要关闭</td><td>Turn off anyway</td></tr>
               <tr><td>保存失败，请重试</td><td>Couldn’t save. Please try again.</td></tr>
             </table>
           </div>
         </div>
-        <aside class="notes">
-          <h3>页面说明</h3>
-          <p>1. 英文文案按欧洲演示语境处理，优先自然可读，不逐字直译。</p>
-          <p>2. “糖哨兵”英文使用 GluSentry，与硬件外壳品牌名保持一致；“糖宝”暂按 Tangbao，如后续另定英文名再统一替换。</p>
-          <p>3. “报警”在设备动作中用 alarm；普通提示或提醒可用 alert。</p>
-          <p>4. 医疗相关表达避免承诺诊断或治疗结果，统一使用 insights、suggestions、out of range 等更稳妥表达。</p>
-        </aside>
       </section>
 
       <section class="page" id="dialogs">
@@ -593,7 +596,7 @@
             </div>
           </div>
         </div>
-        <aside class="notes inline">
+        <aside class="notes">
           <h3>页面说明</h3>
           <p>1. 当前仅保留“确认关闭全部报警方式”弹窗。</p>
           <p>2. 点击“保留报警”：关闭弹窗，最后一种报警方式保持开启。</p>

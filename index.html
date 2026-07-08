@@ -23,6 +23,8 @@
         <button class="nav-item" data-page="unit-edit">修改血糖单位</button>
         <button class="nav-item" data-page="basic-profile">基础信息</button>
         <button class="nav-item" data-page="account">账号与安全</button>
+        <button class="nav-item" data-page="language">多语言</button>
+        <button class="nav-item" data-page="english-copy">英文文案清单</button>
         <button class="nav-item" data-page="dialogs">弹窗与异常提示</button>
       </nav>
       <div class="legend">
@@ -106,7 +108,12 @@
           <div class="list-card">
             <div class="list-row"><span>血糖单位</span><b>mmol/L ›</b></div>
             <div class="list-row"><span>基础信息</span><b>›</b></div>
+          </div>
+          <div class="list-card">
             <div class="list-row"><span>账号与安全</span><b>›</b></div>
+          </div>
+          <div class="list-card">
+            <div class="list-row"><span>多语言</span><b>简体中文 ›</b></div>
           </div>
           <div class="list-card">
             <div class="list-row"><span>我的设备</span><b>1 台 ›</b></div>
@@ -122,7 +129,8 @@
           <p>1. 底部新增“我的”Tab。</p>
           <p>2. 底部“设备”Tab 承载目前已开发的所有设备相关功能。</p>
           <p>3. “我的设备”和底部“设备”Tab 进入同一个设备列表 / 设备管理页面，即现有“我的设备”页。</p>
-          <p>4. 退出登录从原设备列表页迁移到“我的”页底部，沿用现有退出登录能力。</p>
+          <p>4. “账号与安全”单独成组展示；“多语言”入口位于“账号与安全”下方。</p>
+          <p>5. 退出登录从原设备列表页迁移到“我的”页底部，沿用现有退出登录能力。</p>
         </aside>
       </section>
 
@@ -239,6 +247,166 @@
           <h3>页面说明</h3>
           <p>1. 从“我的 - 账号与安全”进入。</p>
           <p>2. 点击“密码设置”进入现有“设置新密码”页。</p>
+        </aside>
+      </section>
+
+      <section class="page" id="language">
+        <div class="page-head">
+          <div>
+            <span class="tag add">新增页面</span>
+            <h2>多语言</h2>
+            <p>从“我的”进入，用户可手动切换 App 展示语言。本期不做“跟随系统”。</p>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone-status"></div>
+          <div class="phone-nav"><span>‹</span><strong>多语言</strong><button class="nav-action disabled">确定</button></div>
+          <div class="language-list">
+            <div class="language-row selected"><span>简体中文</span><b>✓</b></div>
+            <div class="language-row"><span>English</span><b></b></div>
+          </div>
+        </div>
+        <aside class="notes">
+          <h3>页面说明</h3>
+          <p>1. 入口：从“我的 - 多语言”进入。</p>
+          <p>2. 本期仅支持“简体中文”和“English”，不提供“跟随系统”选项。</p>
+          <p>3. 首次安装默认使用 App 预设语言；7 月欧洲演示包可预设为 English。</p>
+          <p>4. 进入页面时展示当前已设置语言；当前语言用对勾标识。</p>
+          <p>5. 未选择另一种语言时，“确定”按钮不可点击；选择另一种语言后，“确定”按钮可点击。</p>
+          <p>6. 点击“确定”后保存语言设置，并重新加载 App 语言包；保存成功后返回“我的”。</p>
+          <p>7. 保存失败时，保持当前语言不变，并 toast 提示“保存失败，请重试”。</p>
+          <p>8. 切换语言后，App 内页面文案、设备相关设置文案和弹窗文案同步切换；设备屏幕文案是否同步切换需固件确认。</p>
+        </aside>
+      </section>
+
+      <section class="page copy-page" id="english-copy">
+        <div class="page-head">
+          <div>
+            <span class="tag add">文案清单</span>
+            <h2>英文文案清单</h2>
+            <p>面向欧洲演示，英文以自然可读为优先，不按中文逐字直译。</p>
+          </div>
+        </div>
+        <div class="copy-board">
+          <div class="copy-section">
+            <h3>全局与导航</h3>
+            <table class="copy-table">
+              <tr><th>中文</th><th>英文建议</th></tr>
+              <tr><td>糖哨兵 App</td><td>GlucoSentinel App</td></tr>
+              <tr><td>一期剩余功能线框原型</td><td>Phase 1 Remaining Feature Wireframes</td></tr>
+              <tr><td>设备</td><td>Device</td></tr>
+              <tr><td>我的</td><td>Me</td></tr>
+              <tr><td>下一步</td><td>Next</td></tr>
+              <tr><td>保存</td><td>Save</td></tr>
+              <tr><td>完成</td><td>Done</td></tr>
+              <tr><td>确定</td><td>Confirm</td></tr>
+            </table>
+          </div>
+
+          <div class="copy-section">
+            <h3>血糖单位</h3>
+            <table class="copy-table">
+              <tr><th>中文</th><th>英文建议</th></tr>
+              <tr><td>血糖单位</td><td>Glucose Unit</td></tr>
+              <tr><td>选择血糖单位</td><td>Select Glucose Unit</td></tr>
+              <tr><td>设备和 App 将按所选单位显示血糖值。</td><td>The device and app will display glucose readings in the selected unit.</td></tr>
+              <tr><td>选择后仍可在“我的”中修改。</td><td>You can change this later in Me.</td></tr>
+            </table>
+          </div>
+
+          <div class="copy-section">
+            <h3>模式设置与预览</h3>
+            <table class="copy-table">
+              <tr><th>中文</th><th>英文建议</th></tr>
+              <tr><td>模式设置与预览</td><td>Mode Settings & Preview</td></tr>
+              <tr><td>工作模式</td><td>Work Mode</td></tr>
+              <tr><td>展示预览</td><td>Display Preview</td></tr>
+              <tr><td>正常状态</td><td>In Range</td></tr>
+              <tr><td>显示与声音</td><td>Display & Sound</td></tr>
+              <tr><td>屏幕亮度</td><td>Screen Brightness</td></tr>
+              <tr><td>设备音量</td><td>Device Volume</td></tr>
+              <tr><td>警报设置</td><td>Alert Settings</td></tr>
+              <tr><td>高血糖</td><td>High Glucose</td></tr>
+              <tr><td>低血糖</td><td>Low Glucose</td></tr>
+              <tr><td>无数据</td><td>No Data</td></tr>
+              <tr><td>设备离线</td><td>Device Offline</td></tr>
+              <tr><td>报警方式</td><td>Alarm Methods</td></tr>
+              <tr><td>声音警报</td><td>Sound Alarm</td></tr>
+              <tr><td>屏幕闪烁警报</td><td>Screen Flash Alarm</td></tr>
+              <tr><td>振动警报</td><td>Vibration Alarm</td></tr>
+              <tr><td>设备发光</td><td>Device Glow</td></tr>
+              <tr><td>开启后，设备平常发暖黄色光，报警时发橙红色光。</td><td>When enabled, the device glows warm yellow normally and orange-red during alarms.</td></tr>
+              <tr><td>警报音模式</td><td>Alarm Sound Mode</td></tr>
+              <tr><td>规律</td><td>Regular</td></tr>
+              <tr><td>随机</td><td>Random</td></tr>
+              <tr><td>小睡功能</td><td>Snooze</td></tr>
+              <tr><td>小睡时长</td><td>Snooze Duration</td></tr>
+              <tr><td>开启后，短按功能键可暂停报警；小睡结束后，若仍超阈值将恢复报警。</td><td>When enabled, press the device function button to pause alarms. If glucose is still out of range after the snooze duration ends, alarms will resume.</td></tr>
+            </table>
+          </div>
+
+          <div class="copy-section">
+            <h3>我的与账号</h3>
+            <table class="copy-table">
+              <tr><th>中文</th><th>英文建议</th></tr>
+              <tr><td>基础信息</td><td>Basic Information</td></tr>
+              <tr><td>账号与安全</td><td>Account & Security</td></tr>
+              <tr><td>多语言</td><td>Language</td></tr>
+              <tr><td>我的设备</td><td>My Device</td></tr>
+              <tr><td>退出登录</td><td>Log Out</td></tr>
+              <tr><td>密码设置</td><td>Password Settings</td></tr>
+            </table>
+          </div>
+
+          <div class="copy-section">
+            <h3>基础信息</h3>
+            <table class="copy-table">
+              <tr><th>中文</th><th>英文建议</th></tr>
+              <tr><td>让糖宝更懂您</td><td>Help Tangbao Understand You Better</td></tr>
+              <tr><td>完善基础信息后，糖宝可结合您的血糖与健康资料，提供更个体化的分析与建议。</td><td>Complete your basic information so Tangbao can provide more personalised insights and suggestions based on your glucose and health profile.</td></tr>
+              <tr><td>希望糖宝怎么称呼您</td><td>What would you like Tangbao to call you?</td></tr>
+              <tr><td>性别</td><td>Sex</td></tr>
+              <tr><td>出生日期</td><td>Date of Birth</td></tr>
+              <tr><td>身高</td><td>Height</td></tr>
+              <tr><td>体重</td><td>Weight</td></tr>
+              <tr><td>患病类型</td><td>Diabetes Type</td></tr>
+              <tr><td>确诊时间</td><td>Diagnosis Date</td></tr>
+              <tr><td>治疗方案</td><td>Treatment Plan</td></tr>
+              <tr><td>请输入</td><td>Enter</td></tr>
+              <tr><td>请选择</td><td>Select</td></tr>
+              <tr><td>胰岛素泵</td><td>Insulin Pump</td></tr>
+              <tr><td>餐前+基础</td><td>Bolus + Basal</td></tr>
+              <tr><td>预混</td><td>Premixed Insulin</td></tr>
+              <tr><td>降糖药物治疗</td><td>Glucose-Lowering Medication</td></tr>
+              <tr><td>生活方式干预</td><td>Lifestyle Intervention</td></tr>
+              <tr><td>周制剂</td><td>Weekly Injectable</td></tr>
+              <tr><td>混合闭环胰岛素输注系统 AAPS</td><td>Hybrid Closed-Loop Insulin Delivery System AAPS</td></tr>
+              <tr><td>混合闭环胰岛素输注系统 LOOP</td><td>Hybrid Closed-Loop Insulin Delivery System LOOP</td></tr>
+              <tr><td>胰岛素类型</td><td>Insulin Type</td></tr>
+              <tr><td>胰岛素泵类型</td><td>Insulin Pump Type</td></tr>
+              <tr><td>血糖监测</td><td>Glucose Monitoring</td></tr>
+              <tr><td>这些信息仅用于糖宝后续交流时参考，不会用于其他用途，也不会向任何第三方共享，请放心填写。</td><td>This information will only be used by Tangbao as context for future conversations. It will not be used for any other purpose or shared with third parties.</td></tr>
+            </table>
+          </div>
+
+          <div class="copy-section">
+            <h3>弹窗与异常</h3>
+            <table class="copy-table">
+              <tr><th>中文</th><th>英文建议</th></tr>
+              <tr><td>确认关闭全部报警方式？</td><td>Turn off all alarm methods?</td></tr>
+              <tr><td>关闭后，设备可能无法在血糖异常时提醒你。建议至少保留一种报警方式。</td><td>If all alarm methods are turned off, the device may not be able to alert you when your glucose is out of range. We recommend keeping at least one alarm method enabled.</td></tr>
+              <tr><td>保留报警</td><td>Keep Alarm On</td></tr>
+              <tr><td>仍要关闭</td><td>Turn Off Anyway</td></tr>
+              <tr><td>保存失败，请重试</td><td>Couldn’t save. Please try again.</td></tr>
+            </table>
+          </div>
+        </div>
+        <aside class="notes">
+          <h3>页面说明</h3>
+          <p>1. 英文文案按欧洲演示语境处理，优先自然可读，不逐字直译。</p>
+          <p>2. “糖哨兵”英文暂按 GlucoSentinel，“糖宝”暂按 Tangbao；如品牌英文名已定，以最终品牌口径替换。</p>
+          <p>3. “报警”在设备动作中用 alarm；普通提示或提醒可用 alert。</p>
+          <p>4. 医疗相关表达避免承诺诊断或治疗结果，统一使用 insights、suggestions、out of range 等更稳妥表达。</p>
         </aside>
       </section>
 

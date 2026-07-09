@@ -20,6 +20,7 @@
         <button class="nav-item active" data-page="basic-profile">基础信息</button>
         <button class="nav-item" data-page="unit-bind">绑定阶段：血糖单位</button>
         <button class="nav-item" data-page="mode">模式设置与预览</button>
+        <button class="nav-item" data-page="alarm-snooze">警报小睡卡片</button>
         <button class="nav-item" data-page="mine">我的</button>
         <button class="nav-item" data-page="unit-edit">修改血糖单位</button>
         <button class="nav-item" data-page="account">账号与安全</button>
@@ -93,6 +94,53 @@
           <p>2. 小睡时长可设置范围为 1-180 的正整数，默认值为 5 分钟。</p>
           <p>3. 小睡功能关闭时，“小睡时长”置灰不可编辑。</p>
           <p>4. 报警方式关闭时实时校验：无论用户按什么顺序关闭，当只剩最后一种报警方式开启时，若用户继续关闭最后一个开关，则弹出“确认关闭全部报警方式”弹窗。</p>
+          <p>5. App 侧全局警报小睡卡片读取当前模式已保存的小睡时长；读取失败时，按钮兜底展示为“小睡”。</p>
+        </aside>
+      </section>
+
+      <section class="page wide-prototype" id="alarm-snooze">
+        <div class="page-head">
+          <div>
+            <span class="tag add">新增全局浮层</span>
+            <h2>警报小睡卡片</h2>
+            <p>报警发生时，用户可直接在 App 内暂停警报，不需要起身到设备旁短按功能键。</p>
+          </div>
+        </div>
+        <div class="phone-pair">
+          <div class="phone demo-phone">
+            <img class="existing-screen" src="./existing_my_devices.png" alt="现有我的设备页面" />
+            <div class="screenshot-tabbar">
+              <button class="active">设备</button>
+              <button>我的</button>
+            </div>
+            <div class="global-alert-card">
+              <div>
+                <h3>高血糖警报</h3>
+                <p>当前血糖</p>
+                <div class="alert-value">14.2 <span>mmol/L</span></div>
+              </div>
+              <button>小睡 15 分钟</button>
+            </div>
+          </div>
+
+          <div class="phone demo-phone">
+            <img class="existing-screen muted-page" src="./existing_my_devices.png" alt="现有我的设备页面，小睡倒计时状态" />
+            <div class="screenshot-tabbar">
+              <button class="active">设备</button>
+              <button>我的</button>
+            </div>
+            <div class="snooze-pill">小睡中 · 14:59</div>
+          </div>
+        </div>
+        <aside class="notes">
+          <h3>页面说明</h3>
+          <p>1. 当设备处于报警中，用户打开 App 后，不管当前停留在哪个已登录页面，底部弹出警报卡片。</p>
+          <p>2. 卡片标题按报警类型展示，例如高血糖警报、低血糖警报、无数据警报、设备离线警报。</p>
+          <p>3. 点击“小睡 X 分钟”后，效果等同于短按设备功能键：当前报警方式暂停 X 分钟。</p>
+          <p>4. X 读取当前模式已保存的小睡时长；读取失败时，按钮兜底展示为“小睡”。</p>
+          <p>5. 点击小睡后，底部卡片收起为侧边倒计时状态，展示“小睡中 · mm:ss”。</p>
+          <p>6. 倒计时结束后，如果报警条件已解除，卡片消失；如果报警条件仍存在，恢复底部警报卡片并重新提醒。</p>
+          <p>7. 小睡功能关闭时，警报卡片不展示小睡按钮，或按钮置灰并提示需先开启小睡功能。</p>
         </aside>
       </section>
 
@@ -494,6 +542,10 @@
               <tr><td>小睡功能</td><td>Snooze</td></tr>
               <tr><td>小睡时长</td><td>Snooze duration</td></tr>
               <tr><td>开启后，短按功能键可暂停报警；小睡结束后，若仍超阈值将恢复报警。</td><td>When enabled, briefly press the function button to pause alerts. Alerts will resume after the snooze period if the condition persists.</td></tr>
+              <tr><td>高血糖警报</td><td>High Glucose Alert</td></tr>
+              <tr><td>当前血糖 14.2 mmol/L</td><td>Current glucose: 14.2 mmol/L</td></tr>
+              <tr><td>小睡 15 分钟</td><td>Snooze for 15 min</td></tr>
+              <tr><td>小睡中 · 14:59</td><td>Snoozing · 14:59</td></tr>
               <tr><td>应用</td><td>Apply</td></tr>
               <tr><td>已应用</td><td>Applied</td></tr>
               <tr><td>温馨提示</td><td>Heads Up</td></tr>

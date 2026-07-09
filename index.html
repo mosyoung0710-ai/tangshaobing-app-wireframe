@@ -106,41 +106,164 @@
             <p>报警发生时，用户可直接在 App 内暂停警报，不需要起身到设备旁短按功能键。</p>
           </div>
         </div>
-        <div class="phone-pair">
-          <div class="phone demo-phone">
-            <img class="existing-screen" src="./existing_my_devices.png" alt="现有我的设备页面" />
-            <div class="screenshot-tabbar">
-              <button class="active">设备</button>
-              <button>我的</button>
-            </div>
-            <div class="global-alert-card">
-              <div>
-                <h3>高血糖警报</h3>
-                <p>当前血糖</p>
-                <div class="alert-value">14.2 <span>mmol/L</span></div>
+        <div class="phone-pair alert-grid">
+          <div class="phone-state">
+            <div class="phone demo-phone">
+              <img class="existing-screen" src="./existing_my_devices.png" alt="现有我的设备页面" />
+              <div class="screenshot-tabbar">
+                <button class="active">设备</button>
+                <button>我的</button>
               </div>
-              <button>小睡 15 分钟</button>
+              <div class="global-alert-card">
+                <div>
+                  <h3>高血糖警报</h3>
+                  <p>当前血糖</p>
+                  <div class="alert-value">14.2 <span>mmol/L · 5分钟前</span></div>
+                </div>
+                <div class="alert-actions">
+                  <button class="snooze-action">小睡 15 分钟</button>
+                  <button class="stop-action">停止</button>
+                </div>
+              </div>
+            </div>
+            <div class="state-caption">展开态：高血糖警报</div>
+          </div>
+
+          <div class="phone-state">
+            <div class="phone demo-phone">
+              <img class="existing-screen" src="./existing_my_devices.png" alt="现有我的设备页面，无数据警报状态" />
+              <div class="screenshot-tabbar">
+                <button class="active">设备</button>
+                <button>我的</button>
+              </div>
+              <div class="global-alert-card warning-card">
+                <div>
+                  <h3>无数据警报</h3>
+                  <p>设备未收到血糖数据</p>
+                  <div class="alert-duration">10分钟</div>
+                </div>
+                <div class="alert-actions">
+                  <button class="snooze-action">小睡 15 分钟</button>
+                  <button class="stop-action">停止</button>
+                </div>
+              </div>
+            </div>
+            <div class="state-caption">展开态：无数据警报</div>
+          </div>
+
+          <div class="phone-state">
+            <div class="phone demo-phone">
+              <img class="existing-screen" src="./existing_my_devices.png" alt="现有我的设备页面，设备离线警报状态" />
+              <div class="screenshot-tabbar">
+                <button class="active">设备</button>
+                <button>我的</button>
+              </div>
+              <div class="global-alert-card warning-card">
+                <div>
+                  <h3>设备离线警报</h3>
+                  <p>设备已离线</p>
+                  <div class="alert-duration">10分钟</div>
+                </div>
+                <div class="alert-actions">
+                  <button class="snooze-action">小睡 15 分钟</button>
+                  <button class="stop-action">停止</button>
+                </div>
+              </div>
+            </div>
+            <div class="state-caption">展开态：设备离线警报</div>
+          </div>
+
+          <div class="state-with-note">
+            <div class="phone-state">
+              <div class="phone demo-phone">
+                <img class="existing-screen muted-page" src="./existing_my_devices.png" alt="现有我的设备页面，警报收起状态" />
+                <div class="screenshot-tabbar">
+                  <button class="active">设备</button>
+                  <button>我的</button>
+                </div>
+                <div class="alert-pill">高血糖 14.2 mmol/L</div>
+              </div>
+              <div class="state-caption">收起态：未处理警报胶囊</div>
+            </div>
+            <div class="state-note">
+              <b>7</b>
+              <p>用户未点小睡，点击页面其他位置时，卡片收起为侧边胶囊；胶囊按报警类型展示“高血糖 14.2 mmol/L”“无数据 10分钟”“已离线 10分钟”。点击胶囊后恢复展开卡片。</p>
             </div>
           </div>
 
-          <div class="phone demo-phone">
-            <img class="existing-screen muted-page" src="./existing_my_devices.png" alt="现有我的设备页面，小睡倒计时状态" />
-            <div class="screenshot-tabbar">
-              <button class="active">设备</button>
-              <button>我的</button>
+          <div class="state-with-note">
+            <div class="phone-state">
+              <div class="phone demo-phone">
+                <img class="existing-screen muted-page" src="./existing_my_devices.png" alt="现有我的设备页面，小睡倒计时状态" />
+                <div class="screenshot-tabbar">
+                  <button class="active">设备</button>
+                  <button>我的</button>
+                </div>
+                <div class="snooze-pill">小睡中 · 14:59</div>
+              </div>
+              <div class="state-caption">收起态：小睡倒计时胶囊</div>
             </div>
-            <div class="snooze-pill">小睡中 · 14:59</div>
+            <div class="state-note">
+              <b>8</b>
+              <p>点击小睡后，底部卡片收起为侧边倒计时胶囊，展示“小睡中 · mm:ss”。点击胶囊后，展开小睡中卡片，卡片内展示报警信息、小睡倒计时和“停止本次警报”按钮。</p>
+            </div>
+          </div>
+
+          <div class="phone-state">
+            <div class="phone demo-phone">
+              <img class="existing-screen muted-page" src="./existing_my_devices.png" alt="现有我的设备页面，小睡中展开状态" />
+              <div class="screenshot-tabbar">
+                <button class="active">设备</button>
+                <button>我的</button>
+              </div>
+              <div class="global-alert-card snoozing-card">
+                <div>
+                  <h3>高血糖警报</h3>
+                  <p>当前血糖</p>
+                  <div class="alert-value">14.2 <span>mmol/L · 5分钟前</span></div>
+                  <div class="snoozing-status">小睡中 · 14:59</div>
+                </div>
+                <button class="stop-full-action">停止本次警报</button>
+              </div>
+            </div>
+            <div class="state-caption">展开态：小睡中详情</div>
+          </div>
+
+          <div class="state-with-note">
+            <div class="phone-state">
+              <div class="phone demo-phone">
+                <img class="existing-screen" src="./existing_my_devices.png" alt="现有我的设备页面，小睡功能未开启状态" />
+                <div class="screenshot-tabbar">
+                  <button class="active">设备</button>
+                  <button>我的</button>
+                </div>
+                <div class="global-alert-card">
+                  <div>
+                    <h3>高血糖警报</h3>
+                    <p>当前血糖</p>
+                    <div class="alert-value">14.2 <span>mmol/L · 5分钟前</span></div>
+                  </div>
+                  <button class="stop-full-action">停止本次警报</button>
+                </div>
+              </div>
+              <div class="state-caption">展开态：小睡功能未开启</div>
+            </div>
+            <div class="state-note">
+              <b>11</b>
+              <p>小睡功能关闭时，警报卡片不展示小睡按钮，只展示“停止本次警报”按钮。</p>
+            </div>
           </div>
         </div>
         <aside class="notes">
           <h3>页面说明</h3>
           <p>1. 当设备处于报警中，用户打开 App 后，不管当前停留在哪个已登录页面，底部弹出警报卡片。</p>
           <p>2. 卡片标题按报警类型展示，例如高血糖警报、低血糖警报、无数据警报、设备离线警报。</p>
-          <p>3. 点击“小睡 X 分钟”后，效果等同于短按设备功能键：当前报警方式暂停 X 分钟。</p>
+          <p>3. 小睡功能开启时，卡片按钮包含“小睡 X 分钟”和“停止”；“小睡 X 分钟”为主按钮，“停止”为次按钮，降低夜间低血糖时误触风险。</p>
           <p>4. X 读取当前模式已保存的小睡时长；读取失败时，按钮兜底展示为“小睡”。</p>
-          <p>5. 点击小睡后，底部卡片收起为侧边倒计时状态，展示“小睡中 · mm:ss”。</p>
-          <p>6. 倒计时结束后，如果报警条件已解除，卡片消失；如果报警条件仍存在，恢复底部警报卡片并重新提醒。</p>
-          <p>7. 小睡功能关闭时，警报卡片不展示小睡按钮，或按钮置灰并提示需先开启小睡功能。</p>
+          <p>5. 高血糖、低血糖警报展示血糖值和采集时间，例如“14.2 mmol/L · 5分钟前”；采集时间与设备端保持一致。</p>
+          <p>6. 无数据、设备离线警报展示持续时长，例如“10分钟”；若用户一直停留在 App 内且未处理，持续时长每分钟更新一次，例如变为 11 分钟、12 分钟。</p>
+          <p>9. 点击“停止”或“停止本次警报”后，本次 App 卡片和侧边胶囊都消失，并停止本次警报。</p>
+          <p>10. 倒计时结束后，如果报警条件已解除，卡片消失；如果报警条件仍存在，恢复底部警报卡片并重新提醒。</p>
         </aside>
       </section>
 
@@ -543,9 +666,20 @@
               <tr><td>小睡时长</td><td>Snooze duration</td></tr>
               <tr><td>开启后，短按功能键可暂停报警；小睡结束后，若仍超阈值将恢复报警。</td><td>When enabled, briefly press the function button to pause alerts. Alerts will resume after the snooze period if the condition persists.</td></tr>
               <tr><td>高血糖警报</td><td>High Glucose Alert</td></tr>
-              <tr><td>当前血糖 14.2 mmol/L</td><td>Current glucose: 14.2 mmol/L</td></tr>
+              <tr><td>当前血糖</td><td>Current glucose</td></tr>
+              <tr><td>14.2 mmol/L · 5分钟前</td><td>14.2 mmol/L · 5 min ago</td></tr>
+              <tr><td>无数据警报</td><td>No Data Alert</td></tr>
+              <tr><td>设备未收到血糖数据</td><td>The device has not received glucose data</td></tr>
+              <tr><td>设备离线警报</td><td>Device Offline Alert</td></tr>
+              <tr><td>设备已离线</td><td>Device offline</td></tr>
+              <tr><td>10分钟</td><td>10 min</td></tr>
               <tr><td>小睡 15 分钟</td><td>Snooze for 15 min</td></tr>
+              <tr><td>停止</td><td>Stop</td></tr>
+              <tr><td>高血糖 14.2 mmol/L</td><td>High glucose 14.2 mmol/L</td></tr>
+              <tr><td>无数据 10分钟</td><td>No data 10 min</td></tr>
+              <tr><td>已离线 10分钟</td><td>Offline 10 min</td></tr>
               <tr><td>小睡中 · 14:59</td><td>Snoozing · 14:59</td></tr>
+              <tr><td>停止本次警报</td><td>Stop this alert</td></tr>
               <tr><td>应用</td><td>Apply</td></tr>
               <tr><td>已应用</td><td>Applied</td></tr>
               <tr><td>温馨提示</td><td>Heads Up</td></tr>

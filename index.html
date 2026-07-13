@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
@@ -17,11 +17,17 @@
         </div>
       </div>
       <nav class="nav" aria-label="页面导航">
-        <button class="nav-item active" data-page="basic-profile">基础信息</button>
+        <button class="nav-item active" data-page="flow-overview">页面流转图</button>
+        <button class="nav-item" data-page="basic-profile">基础信息</button>
         <button class="nav-item" data-page="unit-bind">绑定阶段：血糖单位</button>
         <button class="nav-item" data-page="mode">模式设置与预览</button>
         <button class="nav-item" data-page="alarm-snooze">警报小睡卡片</button>
         <button class="nav-item" data-page="mine">我的</button>
+        <button class="nav-item" data-page="device-detail">设备详情</button>
+        <button class="nav-item" data-page="patient-list">亲情连接</button>
+        <button class="nav-item" data-page="select-patient-bind">选择患者</button>
+        <button class="nav-item" data-page="change-patient">更换患者</button>
+        <button class="nav-item" data-page="family-basic-profile">修改基础信息</button>
         <button class="nav-item" data-page="unit-edit">修改血糖单位</button>
         <button class="nav-item" data-page="account">账号与安全</button>
         <button class="nav-item" data-page="language">多语言</button>
@@ -35,6 +41,147 @@
     </aside>
 
     <main class="stage">
+      <section class="page wide-prototype active" id="flow-overview">
+        <div class="page-head">
+          <div>
+            <span class="tag add">总览</span>
+            <h2>页面流转图</h2>
+            <p>把主要页面截图放进流程里，开发可先看全局入口，再进入左侧具体页面查看细节。</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          <h3>页面说明</h3>
+          <p>1. 本页是全局导航地图，不替代具体页面说明；点击带截图的卡片可跳到对应原型页。</p>
+          <p>2. 绑定主流程为：注册/登录 → 搜索设备 → 绑定设备 →（选择/添加患者）→ 基础信息 → Wi-Fi 设置 → 血糖源设置 → 血糖单位 → 模式设置与预览。</p>
+          <p>3. “选择患者”只在第二台及后续设备绑定时出现；首台设备绑定后直接进入“基础信息”。</p>
+          <p>4. 小睡卡片属于警报触发后的全局临时状态，不放入主流程图；详见左侧“警报小睡卡片”。</p>
+        </aside>
+
+        <div class="flow-map">
+          <div class="flow-group flow-main-group">
+            <div class="flow-group-title">
+              <h3>绑定与首次配置主流程</h3>
+              <p>注册/登录后进入设备绑定；患者信息放在设备配置前处理，再继续设备联网和数据源配置。</p>
+            </div>
+            <div class="flow-lane main-flow">
+              <article class="flow-card placeholder-card">
+                <strong>注册 / 登录</strong>
+                <span>既有账号流程</span>
+              </article>
+              <span class="flow-arrow">→</span>
+              <article class="flow-card placeholder-card">
+                <strong>搜索设备</strong>
+                <span>既有设备发现流程</span>
+              </article>
+              <span class="flow-arrow">→</span>
+              <article class="flow-card placeholder-card">
+                <strong>绑定设备</strong>
+                <span>完成设备绑定</span>
+              </article>
+              <span class="flow-arrow">→</span>
+              <article class="flow-card" data-goto="select-patient-bind">
+                <strong>选择患者</strong>
+                <img src="./flow_overview/screens/select-patient-bind.png" alt="选择患者页面截图" />
+              </article>
+              <span class="flow-arrow">→</span>
+              <article class="flow-card" data-goto="basic-profile">
+                <strong>基础信息</strong>
+                <img src="./flow_overview/screens/basic-profile.png" alt="基础信息页面截图" />
+              </article>
+              <span class="flow-arrow">→</span>
+              <article class="flow-card placeholder-card">
+                <strong>Wi-Fi 设置</strong>
+                <span>既有页面</span>
+              </article>
+              <span class="flow-arrow">→</span>
+              <article class="flow-card placeholder-card">
+                <strong>血糖源设置</strong>
+                <span>既有页面</span>
+              </article>
+              <span class="flow-arrow">→</span>
+              <article class="flow-card" data-goto="unit-bind">
+                <strong>血糖单位</strong>
+                <img src="./flow_overview/screens/unit-bind.png" alt="血糖单位页面截图" />
+              </article>
+              <span class="flow-arrow">→</span>
+              <article class="flow-card wide-shot" data-goto="mode">
+                <strong>模式设置与预览</strong>
+                <img src="./flow_overview/screens/mode.png" alt="模式设置与预览页面截图" />
+              </article>
+            </div>
+          </div>
+
+          <div class="flow-group flow-mine-group">
+            <div class="flow-group-title">
+              <h3>“我的”入口</h3>
+              <p>“我的”承载账号、语言、患者和设备相关入口；患者详情页再进入血糖图表和基础信息。</p>
+            </div>
+            <div class="flow-split">
+              <article class="flow-card" data-goto="mine">
+                <strong>我的</strong>
+                <img src="./flow_overview/screens/mine.png" alt="我的页面截图" />
+              </article>
+              <div class="flow-branches">
+                <div class="flow-branch-row">
+                  <span class="flow-arrow">→</span>
+                  <article class="flow-card" data-goto="patient-list">
+                    <strong>亲情连接</strong>
+                    <img src="./flow_overview/screens/patient-list.png" alt="亲情连接页面截图" />
+                  </article>
+                  <span class="flow-arrow">→</span>
+                  <article class="flow-card" data-goto="family-basic-profile">
+                    <strong>患者详情 / 基础信息</strong>
+                    <img src="./flow_overview/screens/family-basic-profile.png" alt="患者基础信息页面截图" />
+                  </article>
+                </div>
+                <div class="flow-branch-row compact single-target">
+                  <span class="flow-arrow">→</span>
+                  <article class="flow-card small-shot" data-goto="unit-edit">
+                    <strong>修改血糖单位</strong>
+                    <img src="./flow_overview/screens/unit-edit.png" alt="修改血糖单位页面截图" />
+                  </article>
+                </div>
+                <div class="flow-branch-row compact single-target">
+                  <span class="flow-arrow">→</span>
+                  <article class="flow-card small-shot" data-goto="account">
+                    <strong>账号与安全</strong>
+                    <img src="./flow_overview/screens/account.png" alt="账号与安全页面截图" />
+                  </article>
+                </div>
+                <div class="flow-branch-row compact single-target">
+                  <span class="flow-arrow">→</span>
+                  <article class="flow-card small-shot" data-goto="language">
+                    <strong>多语言</strong>
+                    <img src="./flow_overview/screens/language.png" alt="多语言页面截图" />
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flow-group flow-device-group">
+            <div class="flow-group-title">
+              <h3>设备入口</h3>
+              <p>设备详情页可查看当前患者、进入更换患者流程。</p>
+            </div>
+            <div class="flow-lane device-flow">
+              <article class="flow-card" data-goto="device-detail">
+                <strong>设备详情</strong>
+                <span class="flow-hotspot device-patient-hotspot">当前患者 · 更换</span>
+                <img src="./flow_overview/screens/device-detail.png" alt="设备详情页面截图" />
+              </article>
+              <span class="flow-arrow">→</span>
+              <article class="flow-card" data-goto="change-patient">
+                <strong>更换患者</strong>
+                <img src="./flow_overview/screens/change-patient.png" alt="更换患者页面截图" />
+              </article>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
       <section class="page" id="unit-bind">
         <div class="page-head">
           <div>
@@ -65,7 +212,7 @@
             </div>
             <div class="tip">选择后仍可在“我的”中修改。</div>
           </div>
-          <button class="primary bottom">下一步</button>
+          <button class="primary bottom" data-goto="mode">下一步</button>
         </div>
         <aside class="notes">
           <h3>页面说明</h3>
@@ -115,7 +262,7 @@
               <img class="existing-screen" src="./existing_my_devices.png" alt="现有我的设备页面" />
               <div class="screenshot-tabbar">
                 <button class="active">设备</button>
-                <button>我的</button>
+                <button data-goto="mine">我的</button>
               </div>
               <div class="global-alert-card">
                 <div>
@@ -137,7 +284,7 @@
               <img class="existing-screen" src="./existing_my_devices.png" alt="现有我的设备页面，无数据警报状态" />
               <div class="screenshot-tabbar">
                 <button class="active">设备</button>
-                <button>我的</button>
+                <button data-goto="mine">我的</button>
               </div>
               <div class="global-alert-card warning-card">
                 <div>
@@ -159,7 +306,7 @@
               <img class="existing-screen" src="./existing_my_devices.png" alt="现有我的设备页面，设备离线警报状态" />
               <div class="screenshot-tabbar">
                 <button class="active">设备</button>
-                <button>我的</button>
+                <button data-goto="mine">我的</button>
               </div>
               <div class="global-alert-card warning-card">
                 <div>
@@ -182,7 +329,7 @@
                 <img class="existing-screen muted-page" src="./existing_my_devices.png" alt="现有我的设备页面，警报收起状态" />
                 <div class="screenshot-tabbar">
                   <button class="active">设备</button>
-                  <button>我的</button>
+                  <button data-goto="mine">我的</button>
                 </div>
                 <div class="alert-pill">高血糖 14.2 mmol/L</div>
               </div>
@@ -200,7 +347,7 @@
                 <img class="existing-screen muted-page" src="./existing_my_devices.png" alt="现有我的设备页面，小睡倒计时状态" />
                 <div class="screenshot-tabbar">
                   <button class="active">设备</button>
-                  <button>我的</button>
+                  <button data-goto="mine">我的</button>
                 </div>
                 <div class="snooze-pill">小睡中 · 14:59</div>
               </div>
@@ -217,7 +364,7 @@
               <img class="existing-screen muted-page" src="./existing_my_devices.png" alt="现有我的设备页面，小睡中展开状态" />
               <div class="screenshot-tabbar">
                 <button class="active">设备</button>
-                <button>我的</button>
+                <button data-goto="mine">我的</button>
               </div>
               <div class="global-alert-card snoozing-card">
                 <div>
@@ -238,7 +385,7 @@
                 <img class="existing-screen" src="./existing_my_devices.png" alt="现有我的设备页面，小睡功能未开启状态" />
                 <div class="screenshot-tabbar">
                   <button class="active">设备</button>
-                  <button>我的</button>
+                  <button data-goto="mine">我的</button>
                 </div>
                 <div class="global-alert-card">
                   <div>
@@ -282,21 +429,21 @@
           <div class="phone-status"></div>
           <div class="phone-title">我的</div>
           <div class="list-card">
-            <div class="list-row"><span>基础信息</span><b>›</b></div>
-            <div class="list-row"><span>血糖单位</span><b>mmol/L ›</b></div>
+            <div class="list-row" data-goto="patient-list"><span>亲情连接</span><b>›</b></div>
+            <div class="list-row" data-goto="unit-edit"><span>血糖单位</span><b>mmol/L ›</b></div>
           </div>
           <div class="list-card">
-            <div class="list-row"><span>账号与安全</span><b>›</b></div>
+            <div class="list-row" data-goto="account"><span>账号与安全</span><b>›</b></div>
           </div>
           <div class="list-card">
-            <div class="list-row"><span>多语言</span><b>简体中文 ›</b></div>
+            <div class="list-row" data-goto="language"><span>多语言</span><b>简体中文 ›</b></div>
           </div>
           <div class="list-card">
-            <div class="list-row"><span>我的设备</span><b>1 台 ›</b></div>
+            <div class="list-row" data-goto="device-detail"><span>我的设备</span><b>1 台 ›</b></div>
           </div>
           <button class="logout-btn">退出登录</button>
           <div class="tabbar">
-            <button>设备</button>
+            <button data-goto="device-detail">设备</button>
             <button class="active">我的</button>
           </div>
         </div>
@@ -304,9 +451,152 @@
           <h3>页面说明</h3>
           <p>1. 底部新增“我的”Tab。</p>
           <p>2. 底部“设备”Tab 承载目前已开发的所有设备相关功能。</p>
-          <p>3. “我的设备”和底部“设备”Tab 进入同一个设备列表 / 设备管理页面，即现有“我的设备”页。</p>
-          <p>4. “账号与安全”单独成组展示；“多语言”入口位于“账号与安全”下方。</p>
-          <p>5. 退出登录从原设备列表页迁移到“我的”页底部，沿用现有退出登录能力。</p>
+          <p>3. 点击“亲情连接”进入患者列表，可查看或修改已有患者的基础信息；点击“添加患者”时 toast 提示“功能正在开发中”。</p>
+          <p>4. 点击“我的设备”进入现有“我的设备”页。</p>
+          <p>5. “账号与安全”单独成组展示；“多语言”入口位于“账号与安全”下方。</p>
+          <p>6. 退出登录从原设备列表页迁移到“我的”页底部，沿用现有退出登录能力。</p>
+        </aside>
+      </section>
+
+      <section class="page" id="device-detail">
+        <div class="page-head">
+          <div>
+            <span class="tag change">改造页面</span>
+            <h2>设备详情</h2>
+            <p>在现有设备详情页增加当前患者入口，支持后续更换设备关联患者。</p>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone-status"></div>
+          <div class="phone-nav"><span data-goto="mine">‹</span><strong>糖哨兵</strong><span></span></div>
+          <div class="list-card device-setting-row">
+            <div class="list-row" data-goto="change-patient"><span>当前患者</span><b>安安　更换 ›</b></div>
+          </div>
+          <div class="list-card device-setting-row">
+            <div class="list-row"><span>Wi-Fi设置</span><b class="accent">已设置 ›</b></div>
+          </div>
+          <div class="list-card device-setting-row">
+            <div class="list-row"><span>血糖源设置</span><b>未设置 ›</b></div>
+          </div>
+          <div class="list-card device-setting-row">
+            <div class="list-row" data-goto="mode"><span>模式设置与预览</span><b class="accent">已设置 ›</b></div>
+          </div>
+          <button class="outline-bottom">解绑设备</button>
+          <div class="tabbar">
+            <button class="active">设备</button>
+            <button data-goto="mine">我的</button>
+          </div>
+        </div>
+        <aside class="notes">
+          <h3>页面说明</h3>
+          <p>1. 本页在现有设备详情页新增“当前患者”一栏。</p>
+          <p>2. 点击“更换”进入“更换患者”页。</p>
+          <p>3. 更换患者只影响当前设备与患者的关联关系，不修改 Wi-Fi、血糖源和模式设置。</p>
+        </aside>
+      </section>
+
+      <section class="page" id="select-patient-bind">
+        <div class="page-head">
+          <div>
+            <span class="tag add">新增页面</span>
+            <h2>选择患者</h2>
+            <p>绑定第二台及后续设备时，先选择这台设备对应的患者。</p>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone-status"></div>
+          <div class="phone-nav"><span></span><strong>选择患者</strong><button class="nav-action">确定</button></div>
+          <div class="content">
+            <h3>我的患者</h3>
+            <div class="patient-list">
+              <div class="patient-row selected">
+                <div>
+                  <strong>安安</strong>
+                  <p>T1DM · 胰岛素泵</p>
+                </div>
+                <b class="checkmark">✓</b>
+              </div>
+            </div>
+            <button class="ghost add-patient">添加患者</button>
+            <div class="toast-preview">功能正在开发中</div>
+          </div>
+        </div>
+        <aside class="notes">
+          <h3>页面说明</h3>
+          <p>1. 入口：绑定第二台及后续设备时，在设备绑定完成后进入本页。</p>
+          <p>2. 当前版本仅展示一个患者，默认选中该患者。</p>
+          <p>3. 点击“确定”后，将当前设备关联到选中的患者，并进入 Wi-Fi 设置。</p>
+          <p>4. 点击“添加患者”时，toast 提示“功能正在开发中”。</p>
+        </aside>
+      </section>
+
+      <section class="page" id="change-patient">
+        <div class="page-head">
+          <div>
+            <span class="tag add">新增页面</span>
+            <h2>更换患者</h2>
+            <p>从设备详情页进入，用于更换当前设备关联的患者。</p>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone-status"></div>
+          <div class="phone-nav"><span data-goto="device-detail">‹</span><strong>更换患者</strong><button class="nav-action" data-goto="device-detail">确定</button></div>
+          <div class="content">
+            <h3>我的患者</h3>
+            <div class="patient-list">
+              <div class="patient-row selected">
+                <div>
+                  <strong>安安</strong>
+                  <p>T1DM · 胰岛素泵</p>
+                </div>
+                <b class="checkmark">✓</b>
+              </div>
+            </div>
+            <button class="ghost add-patient">添加患者</button>
+            <div class="toast-preview">功能正在开发中</div>
+          </div>
+        </div>
+        <aside class="notes">
+          <h3>页面说明</h3>
+          <p>1. 入口：从设备详情页“当前患者 - 更换”进入。</p>
+          <p>2. 默认选中当前设备已关联的患者。</p>
+          <p>3. 点击“确定”后，当前设备改为关联选中的患者，并返回设备详情页。</p>
+          <p>4. 点击“添加患者”时，toast 提示“功能正在开发中”。</p>
+        </aside>
+      </section>
+
+      <section class="page" id="patient-list">
+        <div class="page-head">
+          <div>
+            <span class="tag add">新增页面</span>
+            <h2>亲情连接</h2>
+            <p>用于管理当前账号下的患者基础信息，后续可承接家庭组和亲友协作能力。</p>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone-status"></div>
+          <div class="phone-nav"><span data-goto="mine">‹</span><strong>亲情连接</strong><span></span></div>
+          <div class="content">
+            <h3>我的患者</h3>
+            <div class="patient-list">
+              <div class="patient-row" data-goto="family-basic-profile">
+                <div>
+                  <strong>安安</strong>
+                  <p>T1DM · 胰岛素泵</p>
+                </div>
+                <b>›</b>
+              </div>
+            </div>
+            <button class="ghost add-patient">添加患者</button>
+            <div class="toast-preview">功能正在开发中</div>
+          </div>
+        </div>
+        <aside class="notes">
+          <h3>页面说明</h3>
+          <p>1. 入口：从“我的 - 亲情连接”进入。</p>
+          <p>2. 当前版本仅展示一个患者；后续家庭组能力可在本页继续扩展。</p>
+          <p>3. 选择已有患者后进入该患者的基础信息页，并预加载该患者已保存的信息。</p>
+          <p>4. 点击“添加患者”时，toast 提示“功能正在开发中”。</p>
         </aside>
       </section>
 
@@ -321,7 +611,7 @@
         <div class="phone">
           <span class="callout-dot" data-callout="1" style="bottom: 38px; right: 32px;">1</span>
           <div class="phone-status"></div>
-          <div class="phone-nav"><span>‹</span><strong>血糖单位</strong><span></span></div>
+          <div class="phone-nav"><span data-goto="mine">‹</span><strong>血糖单位</strong><span></span></div>
           <div class="content">
             <h3>选择血糖单位</h3>
             <p class="sub">设备和 App 将按所选单位显示血糖值。</p>
@@ -338,7 +628,7 @@
               <span class="radio"></span>
             </div>
           </div>
-          <button class="primary bottom">保存</button>
+          <button class="primary bottom" data-goto="mine">保存</button>
         </div>
         <aside class="notes">
           <h3>页面说明</h3>
@@ -347,12 +637,12 @@
         </aside>
       </section>
 
-      <section class="page active" id="basic-profile">
+      <section class="page" id="basic-profile">
         <div class="page-head">
           <div>
-            <span class="tag add">注册后填写</span>
+            <span class="tag add">新增页面</span>
             <h2>基础信息</h2>
-            <p>注册后先连接设备并完成 Wi-Fi 设置，再引导用户填写基础信息，便于糖宝后续提供个体化分析与建议。</p>
+            <p>填写当前患者的基础信息，便于糖宝后续提供个体化分析与建议。</p>
           </div>
         </div>
         <div class="phone tall">
@@ -363,9 +653,9 @@
           <div class="content">
             <h3>让糖宝更懂您</h3>
             <p class="sub">完善基础信息后，糖宝可结合您的血糖与健康资料，提供更个体化的分析与建议。</p>
-            <div class="tip light">可稍后从“我的 - 基础信息”修改或补充。</div>
+            <div class="tip light">可稍后从“我的 - 亲情连接”修改或补充。</div>
             <div class="form-group">
-              <div class="field"><label>希望糖宝怎么称呼您</label><div>请输入</div></div>
+              <div class="field"><label><span class="req">*</span>患者昵称</label><div>请输入</div></div>
               <div class="field"><label><span class="req">*</span>性别</label><div>请选择</div></div>
               <div class="field"><label><span class="req">*</span>出生日期</label><div>请选择</div></div>
               <div class="field"><label><span class="req">*</span>身高</label><div>请输入 cm</div></div>
@@ -392,15 +682,15 @@
             </div>
             <div class="tip">这些信息仅用于糖宝后续交流时参考，不会用于其他用途，也不会向任何第三方共享，请放心填写。</div>
           </div>
-          <button class="primary sticky">保存</button>
+          <button class="primary sticky">下一步</button>
         </div>
         <div class="notes-stack basic-profile-notes">
           <aside class="notes">
             <h3>页面说明</h3>
-            <p>1. 入口：注册后完成设备连接和 Wi-Fi 设置后进入本页。</p>
-            <p>2. 填写完成后进入“血糖源设置”；后续修改入口为“我的 - 基础信息”。</p>
-            <p>3. “希望糖宝怎么称呼您”为选填，其余字段均为必填。</p>
-            <p>4. 希望糖宝怎么称呼您：文本输入。</p>
+            <p>1. 入口：新账号首次绑定首台设备时，在设备绑定完成后进入本页。后续多患者功能完成后，从“选择患者”或“更换患者”点击“添加患者”也进入本页。</p>
+            <p>2. 填写完成后进入 Wi-Fi 设置；后续流程为设置血糖源、设置血糖单位、模式设置与预览。</p>
+            <p>3. 本页字段均为必填。</p>
+            <p>4. 患者昵称：文本输入，用于“亲情连接”等患者列表展示；糖宝对话中默认使用该昵称称呼用户。</p>
             <p>5. 性别：单选，男、女。</p>
             <p>6. 出生日期、确诊时间均为年月日选择器。</p>
             <p>7. 身高、体重：数字输入，身高用于后续计算 BMI。</p>
@@ -408,8 +698,62 @@
             <p>9. 治疗方案：胰岛素泵、餐前+基础、降糖药物治疗、生活方式干预、预混胰岛素、周制剂、混合闭环胰岛素输注系统。</p>
           </aside>
           <aside class="notes">
-            <p>10. 治疗方案选中后，按方案继续展示对应子选项，子选项均为必填。本页仅示意“胰岛素泵”选中后展示“胰岛素类型、胰岛素泵类型、血糖监测”；“混合闭环胰岛素输注系统”的子项也为以上三个；其余方案的子项直接参考糖糖圈 App 既有治疗方案表单；各子项选项枚举见《治疗方案选项枚举》。</p>
+          <p>10. 治疗方案选中后，按方案继续展示对应子选项，子选项均为必填。本页仅示意“胰岛素泵”选中后展示“胰岛素类型、胰岛素泵类型、血糖监测”；“混合闭环胰岛素输注系统”的子项也为以上三个；其余方案的子项直接参考糖糖圈 App 既有治疗方案表单；各子项选项枚举见《治疗方案选项枚举》。</p>
             <p>11. 治疗方案-胰岛素类型：同一类型内胰岛素互斥，即选择新的胰岛素时自动取消原已选项；胰岛素泵模式下，速效与短效类型之间也互斥。</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="page" id="family-basic-profile">
+        <div class="page-head">
+          <div>
+            <span class="tag add">新增页面</span>
+            <h2>修改基础信息</h2>
+            <p>从“亲情连接”进入，用于查看或修改指定患者的基础信息。</p>
+          </div>
+        </div>
+        <div class="phone tall">
+          <div class="phone-status"></div>
+          <div class="phone-nav"><span data-goto="patient-list">‹</span><strong>安安</strong><span></span></div>
+          <div class="patient-tabs">
+            <button>血糖图表</button>
+            <button class="active">基础信息</button>
+          </div>
+          <div class="content">
+            <div class="profile-title-row">
+              <h3>让糖宝更懂您</h3>
+              <button class="icon-button" aria-label="编辑基础信息">✎</button>
+            </div>
+            <div class="form-group readonly-profile">
+              <div class="field"><label>患者昵称</label><div>安安</div></div>
+              <div class="field"><label>性别</label><div>女</div></div>
+              <div class="field"><label>出生日期</label><div>2015-03-12</div></div>
+              <div class="field"><label>身高</label><div>142 cm</div></div>
+              <div class="field"><label>体重</label><div>36 kg</div></div>
+              <div class="field"><label>患病类型</label><div>T1DM（1型糖尿病）</div></div>
+              <div class="field"><label>确诊时间</label><div>2020-05-08</div></div>
+              <div class="field therapy-field">
+                <label>治疗方案</label>
+                <div class="therapy-options">
+                  <span class="therapy-chip selected">胰岛素泵</span>
+                </div>
+                <div class="therapy-subfields">
+                  <div><span>胰岛素类型</span><b>门冬胰岛素</b></div>
+                  <div><span>胰岛素泵类型</span><b>管路泵</b></div>
+                  <div><span>血糖监测</span><b>CGM</b></div>
+                </div>
+              </div>
+            </div>
+            <div class="tip">这些信息仅用于糖宝后续交流时参考，不会用于其他用途，也不会向任何第三方共享。</div>
+          </div>
+        </div>
+        <div class="notes-stack basic-profile-notes">
+          <aside class="notes">
+            <h3>页面说明</h3>
+            <p>1. 入口：从“我的 - 亲情连接 - 选择患者”进入本页。</p>
+            <p>2. 选择已有患者进入时，默认以只读态展示该患者已保存的基础信息。</p>
+            <p>3. 顶部菜单按“血糖图表、基础信息”顺序展示；本页当前展示“基础信息”，血糖图表后续接入。</p>
+            <p>4. 点击右上角编辑图标后进入编辑态；编辑态字段、必填校验和保存规则同“基础信息”页。</p>
           </aside>
         </div>
       </section>
@@ -425,7 +769,7 @@
         <div class="phone">
           <span class="callout-dot" data-callout="2" style="top: 128px; right: -14px;">2</span>
           <div class="phone-status"></div>
-          <div class="phone-nav"><span>‹</span><strong>账号与安全</strong><span></span></div>
+          <div class="phone-nav"><span data-goto="mine">‹</span><strong>账号与安全</strong><span></span></div>
           <div class="list-card account-card">
             <div class="list-row"><span>密码设置</span><b>›</b></div>
           </div>
@@ -450,7 +794,7 @@
           <span class="callout-dot" data-callout="5" style="top: 54px; right: -14px;">5</span>
           <span class="callout-dot" data-callout="6" style="top: 86px; right: -14px;">6</span>
           <div class="phone-status"></div>
-          <div class="phone-nav"><span>‹</span><strong>多语言</strong><button class="nav-action disabled">确定</button></div>
+          <div class="phone-nav"><span data-goto="mine">‹</span><strong>多语言</strong><button class="nav-action disabled">确定</button></div>
           <div class="language-list">
             <div class="language-row selected"><span>简体中文</span><b>✓</b></div>
             <div class="language-row"><span>English</span><b></b></div>
@@ -463,7 +807,7 @@
           <p>3. 首次启动时按手机系统语言初始化：系统语言为英语时默认 English；其他语言默认简体中文。用户保存语言后，再次进入按已保存语言展示。</p>
           <p>4. 进入页面时展示当前已设置语言；当前语言用对勾标识。</p>
           <p>5. 未选择另一种语言时，“确定”按钮不可点击；选择另一种语言后，“确定”按钮可点击。</p>
-          <p>6. 点击“确定”后保存语言设置，并重新加载 App 语言包；保存成功后返回“我的”。</p>
+          <p>6. 点击“确定”后保存语言设置，并重新加载 App 语言包；设置成功后返回“我的”。</p>
           <p>7. 保存失败时，保持当前语言不变，并 toast 提示“保存失败，请重试”。</p>
           <p>8. 语言切换范围仅覆盖 App 内页面文案、设备相关设置文案和弹窗文案；设备屏幕保持现有语言。</p>
         </aside>
@@ -703,6 +1047,15 @@
             <table class="copy-table">
               <tr><th>中文</th><th>英文建议</th></tr>
               <tr><td>我的</td><td>Me</td></tr>
+              <tr><td>亲情连接</td><td>Family connection</td></tr>
+              <tr><td>我的患者</td><td>My patients</td></tr>
+              <tr><td>选择患者</td><td>Choose patient</td></tr>
+              <tr><td>更换患者</td><td>Change patient</td></tr>
+              <tr><td>当前患者</td><td>Current patient</td></tr>
+              <tr><td>更换</td><td>Change</td></tr>
+              <tr><td>血糖图表</td><td>Glucose charts</td></tr>
+              <tr><td>添加患者</td><td>Add patient</td></tr>
+              <tr><td>功能正在开发中</td><td>This feature is under development.</td></tr>
               <tr><td>基础信息</td><td>Profile information</td></tr>
               <tr><td>账号与安全</td><td>Account &amp; Security</td></tr>
               <tr><td>多语言</td><td>Language</td></tr>
@@ -719,8 +1072,8 @@
               <tr><td>基础信息</td><td>Profile information</td></tr>
               <tr><td>让糖宝更懂您</td><td>Help Tangbao Understand You Better</td></tr>
               <tr><td>完善基础信息后，糖宝可结合您的血糖与健康资料，提供更个体化的分析与建议。</td><td>This information you provide helps customize Tangbao to benefit you most.</td></tr>
-              <tr><td>可稍后从“我的 - 基础信息”修改或补充。</td><td>You can change your personal info any time from Me → Profile information.</td></tr>
-              <tr><td>希望糖宝怎么称呼您</td><td>What should Tangbao call you?</td></tr>
+              <tr><td>可稍后从“我的 - 亲情连接”修改或补充。</td><td>You can change this any time from Me → Family connection.</td></tr>
+              <tr><td>患者昵称</td><td>Patient nickname</td></tr>
               <tr><td>性别</td><td>Gender</td></tr>
               <tr><td>男</td><td>Male</td></tr>
               <tr><td>女</td><td>Female</td></tr>
@@ -804,3 +1157,5 @@
   <script src="./app.js"></script>
 </body>
 </html>
+
+

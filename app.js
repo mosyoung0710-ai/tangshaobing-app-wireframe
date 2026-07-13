@@ -51,9 +51,10 @@ function drawCallouts() {
     const endX = noteStartX - pageRect.left;
     const endY = noteRect.top + Math.min(noteRect.height / 2, 26) - pageRect.top;
     const bend = Math.max(70, (endX - startX) * 0.45);
+    const arch = Number(marker.dataset.arch || 0);
 
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    path.setAttribute("d", `M ${startX} ${startY} C ${startX + bend} ${startY}, ${endX - bend} ${endY}, ${endX} ${endY}`);
+    path.setAttribute("d", `M ${startX} ${startY} C ${startX + bend} ${startY + arch}, ${endX - bend} ${endY + arch}, ${endX} ${endY}`);
     svg.appendChild(path);
   });
 }

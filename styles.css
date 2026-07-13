@@ -338,6 +338,11 @@ button {
   line-height: 1.7;
 }
 
+.notes-stack {
+  display: grid;
+  gap: 16px;
+}
+
 .notes h3 {
   margin: 0 0 12px;
 }

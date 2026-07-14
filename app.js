@@ -29,38 +29,6 @@ function drawCallouts() {
 
   page.querySelectorAll(".callout-layer").forEach((layer) => layer.remove());
   prepareNoteCallouts(page);
-
-  const markers = page.querySelectorAll(".callout-dot[data-callout]");
-  if (!markers.length) return;
-
-  const pageRect = page.getBoundingClientRect();
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.classList.add("callout-layer");
-  svg.setAttribute("width", pageRect.width);
-  svg.setAttribute("height", pageRect.height);
-  svg.setAttribute("viewBox", `0 0 ${pageRect.width} ${pageRect.height}`);
-  page.appendChild(svg);
-
-  markers.forEach((marker) => {
-    const id = marker.dataset.callout;
-    const note = page.querySelector(`.notes p[data-callout="${id}"]`);
-    if (!note) return;
-
-    const markerRect = marker.getBoundingClientRect();
-    const noteRect = note.getBoundingClientRect();
-    const markerCenterX = markerRect.left + markerRect.width / 2;
-    const noteStartX = noteRect.left + 4;
-    const startX = (noteStartX >= markerCenterX ? markerRect.right + 3 : markerRect.left - 3) - pageRect.left;
-    const startY = markerRect.top + markerRect.height / 2 - pageRect.top;
-    const endX = noteStartX - pageRect.left;
-    const endY = noteRect.top + Math.min(noteRect.height / 2, 26) - pageRect.top;
-    const bend = Math.max(70, (endX - startX) * 0.45);
-    const arch = Number(marker.dataset.arch || 0);
-
-    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    path.setAttribute("d", `M ${startX} ${startY} C ${startX + bend} ${startY + arch}, ${endX - bend} ${endY + arch}, ${endX} ${endY}`);
-    svg.appendChild(path);
-  });
 }
 
 window.addEventListener("resize", () => window.requestAnimationFrame(drawCallouts));

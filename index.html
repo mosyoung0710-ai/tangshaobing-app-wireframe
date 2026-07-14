@@ -19,19 +19,19 @@
       <nav class="nav" aria-label="页面导航">
         <button class="nav-item active" data-page="flow-overview">页面流转图</button>
         <button class="nav-item" data-page="basic-profile">基础信息（P0）</button>
-        <button class="nav-item" data-page="unit-bind">绑定阶段：血糖单位（P0）</button>
+        <button class="nav-item" data-page="unit-bind">血糖单位选择（P0）</button>
         <button class="nav-item" data-page="mode">模式设置与预览（P0/P1）</button>
         <button class="nav-item" data-page="alarm-snooze">警报小睡卡片（P2）</button>
         <button class="nav-item" data-page="mine">我的（P0）</button>
         <button class="nav-item" data-page="device-detail">设备详情（P2）</button>
-        <button class="nav-item" data-page="patient-list">亲情连接（P2）</button>
-        <button class="nav-item" data-page="select-patient-bind">选择患者（P2）</button>
-        <button class="nav-item" data-page="change-patient">更换患者（P2）</button>
+        <button class="nav-item" data-page="patient-list">亲情连接（P0）</button>
+        <button class="nav-item" data-page="select-patient-bind">选择照护对象（P2）</button>
+        <button class="nav-item" data-page="change-patient">更换照护对象（P2）</button>
         <button class="nav-item" data-page="family-basic-profile">修改基础信息（P0）</button>
         <button class="nav-item" data-page="unit-edit">修改血糖单位（P0）</button>
         <button class="nav-item" data-page="account">账号与安全（P0）</button>
         <button class="nav-item" data-page="language">多语言（P0）</button>
-        <button class="nav-item" data-page="english-copy">英文文案清单（P0）</button>
+        <button class="nav-item" data-page="english-copy">英文文案清单</button>
         <button class="nav-item" data-page="dialogs">弹窗与异常提示（P0）</button>
       </nav>
       <div class="legend">
@@ -53,8 +53,8 @@
         <aside class="notes">
           <h3>页面说明</h3>
           <p>1. 本页是全局导航地图，不替代具体页面说明；点击带截图的卡片可跳到对应原型页。</p>
-          <p>2. 绑定主流程为：注册/登录 → 搜索设备 → 绑定设备 →（选择/添加患者）→ 基础信息 → Wi-Fi 设置 → 血糖源设置 → 血糖单位 → 模式设置与预览。</p>
-          <p>3. “选择患者”只在第二台及后续设备绑定时出现；首台设备绑定后直接进入“基础信息”。</p>
+          <p>2. 绑定主流程为：注册/登录 → 基础信息 → 血糖单位 → 搜索设备 → 绑定设备 → Wi-Fi 设置 → 血糖源设置 → 模式设置与预览。</p>
+          <p>3. “选择照护对象 / 更换照护对象”属于后续多照护对象链路，不放入 7 月底主流程；本期从“亲情连接”进入基础信息修改。</p>
           <p>4. 小睡卡片属于警报触发后的全局临时状态，不放入主流程图；详见左侧“警报小睡卡片”。</p>
         </aside>
 
@@ -62,12 +62,22 @@
           <div class="flow-group flow-main-group">
             <div class="flow-group-title">
               <h3>绑定与首次配置主流程</h3>
-              <p>注册/登录后进入设备绑定；患者信息放在设备配置前处理，再继续设备联网和数据源配置。</p>
+              <p>注册/登录后先补充基础信息并选择血糖单位，再继续设备发现、绑定、联网和数据源配置。</p>
             </div>
             <div class="flow-lane main-flow">
               <article class="flow-card placeholder-card">
                 <strong>注册 / 登录</strong>
                 <span>既有账号流程</span>
+              </article>
+              <span class="flow-arrow">→</span>
+              <article class="flow-card" data-goto="basic-profile">
+                <strong>基础信息</strong>
+                <img src="./flow_overview/screens/basic-profile.png" alt="基础信息页面截图" />
+              </article>
+              <span class="flow-arrow">→</span>
+              <article class="flow-card" data-goto="unit-bind">
+                <strong>血糖单位</strong>
+                <img src="./flow_overview/screens/unit-bind.png" alt="血糖单位页面截图" />
               </article>
               <span class="flow-arrow">→</span>
               <article class="flow-card placeholder-card">
@@ -80,16 +90,6 @@
                 <span>完成设备绑定</span>
               </article>
               <span class="flow-arrow">→</span>
-              <article class="flow-card" data-goto="select-patient-bind">
-                <strong>选择患者</strong>
-                <img src="./flow_overview/screens/select-patient-bind.png" alt="选择患者页面截图" />
-              </article>
-              <span class="flow-arrow">→</span>
-              <article class="flow-card" data-goto="basic-profile">
-                <strong>基础信息</strong>
-                <img src="./flow_overview/screens/basic-profile.png" alt="基础信息页面截图" />
-              </article>
-              <span class="flow-arrow">→</span>
               <article class="flow-card placeholder-card">
                 <strong>Wi-Fi 设置</strong>
                 <span>既有页面</span>
@@ -98,11 +98,6 @@
               <article class="flow-card placeholder-card">
                 <strong>血糖源设置</strong>
                 <span>既有页面</span>
-              </article>
-              <span class="flow-arrow">→</span>
-              <article class="flow-card" data-goto="unit-bind">
-                <strong>血糖单位</strong>
-                <img src="./flow_overview/screens/unit-bind.png" alt="血糖单位页面截图" />
               </article>
               <span class="flow-arrow">→</span>
               <article class="flow-card wide-shot" data-goto="mode">
@@ -115,7 +110,7 @@
           <div class="flow-group flow-mine-group">
             <div class="flow-group-title">
               <h3>“我的”入口</h3>
-              <p>“我的”承载账号、语言、患者和设备相关入口；患者详情页再进入血糖图表和基础信息。</p>
+              <p>“我的”承载账号、语言、照护对象和设备相关入口；照护详情页再进入血糖图表和基础信息。</p>
             </div>
             <div class="flow-split">
               <article class="flow-card" data-goto="mine">
@@ -131,8 +126,8 @@
                   </article>
                   <span class="flow-arrow">→</span>
                   <article class="flow-card" data-goto="family-basic-profile">
-                    <strong>患者详情 / 基础信息</strong>
-                    <img src="./flow_overview/screens/family-basic-profile.png" alt="患者基础信息页面截图" />
+                    <strong>照护详情 / 基础信息</strong>
+                    <img src="./flow_overview/screens/family-basic-profile.png" alt="照护对象基础信息页面截图" />
                   </article>
                 </div>
                 <div class="flow-branch-row compact single-target">
@@ -163,18 +158,18 @@
           <div class="flow-group flow-device-group">
             <div class="flow-group-title">
               <h3>设备入口</h3>
-              <p>设备详情页可查看当前患者、进入更换患者流程。</p>
+              <p>设备详情页可查看当前照护对象、进入更换照护对象流程。</p>
             </div>
             <div class="flow-lane device-flow">
               <article class="flow-card" data-goto="device-detail">
                 <strong>设备详情</strong>
-                <span class="flow-hotspot device-patient-hotspot">当前患者 · 更换</span>
+                <span class="flow-hotspot device-patient-hotspot">当前照护 · 更换</span>
                 <img src="./flow_overview/screens/device-detail.png" alt="设备详情页面截图" />
               </article>
               <span class="flow-arrow">→</span>
               <article class="flow-card" data-goto="change-patient">
-                <strong>更换患者</strong>
-                <img src="./flow_overview/screens/change-patient.png" alt="更换患者页面截图" />
+                <strong>更换照护对象</strong>
+                <img src="./flow_overview/screens/change-patient.png" alt="更换照护对象页面截图" />
               </article>
             </div>
           </div>
@@ -186,7 +181,7 @@
         <div class="page-head">
           <div>
             <span class="tag add">新增页面</span>
-            <h2>绑定阶段：血糖单位选择</h2>
+            <h2>血糖单位选择</h2>
             <p>用户第一次绑定设备时选择一次，减少后续设备屏幕和 App 单位不一致的风险。</p>
           </div>
         </div>
@@ -212,14 +207,14 @@
             </div>
             <div class="tip">选择后仍可在“我的”中修改。</div>
           </div>
-          <button class="primary bottom" data-goto="mode">下一步</button>
+          <button class="primary bottom">下一步</button>
         </div>
         <aside class="notes">
           <h3>页面说明</h3>
           <p>1. 默认选中 mmol/L。</p>
-          <p>2. 本页加在“血糖源设置”绑定成功之后。</p>
-          <p>3. 点击“下一步”保存单位，并进入“模式设置与预览”。</p>
-          <p>4. 若用户从 mg/dL 切回 mmol/L，需要同步更新阈值展示。</p>
+          <p>2. 本页加在“基础信息”填写完成之后。</p>
+          <p>3. 点击“下一步”保存单位，并进入现有我的设备/添加设备页面。</p>
+          <p>4. 本页切换单位仅更新当前选择态；点击“下一步”后才保存单位，并同步换算相关阈值展示。</p>
           <p>5. 血糖单位换算公式：mmol/L 转 mg/dL = 数值 × 18；mg/dL 转 mmol/L = 数值 ÷ 18。</p>
         </aside>
       </section>
@@ -242,9 +237,8 @@
           <p>3. 报警方式：新增声音、屏幕闪烁、振动、设备发光四个开关；保存后作用于当前模式。</p>
           <p>4. 关闭“声音警报”后，“警报音模式”置灰不可选；重新打开“声音警报”后恢复可选。</p>
           <p>5. 报警方式关闭时实时校验：无论用户按什么顺序关闭，当只剩最后一种报警方式开启时，若用户继续关闭最后一个开关，则弹出“确认关闭全部报警方式”弹窗。</p>
-          <p>6. 小睡时长可设置范围为 1-180 的正整数，默认值为 5 分钟。</p>
+          <p>6. 小睡时长可设置范围为 6-180 的正整数，默认值为 10 分钟。</p>
           <p>7. 小睡功能关闭时，“小睡时长”置灰不可编辑。</p>
-          <p>8. App 侧全局警报小睡卡片读取当前模式已保存的小睡时长；读取失败时，按钮兜底展示为“小睡”。</p>
         </aside>
       </section>
 
@@ -271,7 +265,7 @@
                   <div class="alert-value">14.2 <span>mmol/L · 5分钟前</span></div>
                 </div>
                 <div class="alert-actions">
-                  <button class="snooze-action">小睡 15 分钟</button>
+                  <button class="snooze-action">小睡 10 分钟</button>
                   <button class="stop-action">停止</button>
                 </div>
               </div>
@@ -293,7 +287,7 @@
                   <div class="alert-duration">10分钟</div>
                 </div>
                 <div class="alert-actions">
-                  <button class="snooze-action">小睡 15 分钟</button>
+                  <button class="snooze-action">小睡 10 分钟</button>
                   <button class="stop-action">停止</button>
                 </div>
               </div>
@@ -315,7 +309,7 @@
                   <div class="alert-duration">10分钟</div>
                 </div>
                 <div class="alert-actions">
-                  <button class="snooze-action">小睡 15 分钟</button>
+                  <button class="snooze-action">小睡 10 分钟</button>
                   <button class="stop-action">停止</button>
                 </div>
               </div>
@@ -349,7 +343,7 @@
                   <button class="active">设备</button>
                   <button data-goto="mine">我的</button>
                 </div>
-                <div class="snooze-pill">小睡中 · 14:59</div>
+                <div class="snooze-pill">小睡中 · 09:59</div>
               </div>
               <div class="state-caption">收起态：小睡倒计时胶囊</div>
             </div>
@@ -371,7 +365,7 @@
                   <h3>高血糖警报</h3>
                   <p>当前血糖</p>
                   <div class="alert-value">14.2 <span>mmol/L · 5分钟前</span></div>
-                  <div class="snoozing-status">小睡中 · 14:59</div>
+                  <div class="snoozing-status">小睡中 · 09:59</div>
                 </div>
                 <button class="stop-full-action">停止本次警报</button>
               </div>
@@ -412,8 +406,8 @@
           <p>4. X 读取当前模式已保存的小睡时长；读取失败时，按钮兜底展示为“小睡”。</p>
           <p>5. 高血糖、低血糖警报展示血糖值和采集时间，例如“14.2 mmol/L · 5分钟前”；采集时间与设备端保持一致。</p>
           <p>6. 无数据、设备离线警报展示持续时长，例如“10分钟”；若用户一直停留在 App 内且未处理，持续时长每分钟更新一次，例如变为 11 分钟、12 分钟。</p>
-          <p>9. 点击“停止”或“停止本次警报”后，本次 App 卡片和侧边胶囊都消失，并停止本次警报。</p>
-          <p>10. 倒计时结束后，如果报警条件已解除，卡片消失；如果报警条件仍存在，恢复底部警报卡片并重新提醒。</p>
+          <p>7. 点击“停止”或“停止本次警报”后，本次 App 卡片和侧边胶囊都消失，并停止本次警报。</p>
+          <p>8. 倒计时结束后，如果报警条件已解除，卡片消失；如果报警条件仍存在，恢复底部警报卡片并重新提醒。</p>
         </aside>
       </section>
 
@@ -451,7 +445,7 @@
           <h3>页面说明</h3>
           <p>1. 底部新增“我的”Tab。</p>
           <p>2. 底部“设备”Tab 进入现有“我的设备”页，承载目前已开发的所有设备相关功能。</p>
-          <p>3. 点击“亲情连接”进入患者列表，可查看或修改已有患者的基础信息；点击“添加患者”时吐司提示“功能正在开发中”。</p>
+          <p>3. 点击“亲情连接”进入照护档案列表，可查看或修改已有照护对象的基础信息；点击“添加照护对象”时吐司提示“功能正在开发中”。</p>
           <p>4. 点击“我的设备”同样进入现有“我的设备”页。</p>
           <p>5. “账号与安全”单独成组展示；“多语言”入口位于“账号与安全”下方。</p>
           <p>6. 退出登录从原设备列表页迁移到“我的”页底部，沿用现有退出登录能力。</p>
@@ -463,14 +457,14 @@
           <div>
             <span class="tag change">改造页面</span>
             <h2>设备详情</h2>
-            <p>在现有设备详情页增加当前患者入口，支持后续更换设备关联患者。</p>
+            <p>在现有设备详情页增加当前照护对象入口，支持后续更换设备关联的照护对象。</p>
           </div>
         </div>
         <div class="phone">
           <div class="phone-status"></div>
           <div class="phone-nav"><span data-goto="mine">‹</span><strong>糖哨兵</strong><span></span></div>
           <div class="list-card device-setting-row">
-            <div class="list-row" data-goto="change-patient"><span>当前患者</span><b>安安　更换 ›</b></div>
+            <div class="list-row" data-goto="change-patient"><span>当前照护对象</span><b>安安　更换 ›</b></div>
           </div>
           <div class="list-card device-setting-row">
             <div class="list-row"><span>Wi-Fi设置</span><b class="accent">已设置 ›</b></div>
@@ -489,9 +483,9 @@
         </div>
         <aside class="notes">
           <h3>页面说明</h3>
-          <p>1. 本页在现有设备详情页新增“当前患者”一栏。</p>
-          <p>2. 点击“更换”进入“更换患者”页。</p>
-          <p>3. 更换患者只影响当前设备与患者的关联关系，不修改 Wi-Fi、血糖源和模式设置。</p>
+          <p>1. 本页在现有设备详情页新增“当前照护对象”一栏。</p>
+          <p>2. 点击“更换”进入“更换照护对象”页。</p>
+          <p>3. 更换照护对象只影响当前设备与照护对象的关联关系，不修改 Wi-Fi、血糖源和模式设置。</p>
         </aside>
       </section>
 
@@ -499,15 +493,14 @@
         <div class="page-head">
           <div>
             <span class="tag add">新增页面</span>
-            <h2>选择患者</h2>
-            <p>绑定第二台及后续设备时，先选择这台设备对应的患者。</p>
+            <h2>选择照护对象</h2>
+            <p>绑定第二台及后续设备时，先选择这台设备对应的照护对象。</p>
           </div>
         </div>
         <div class="phone">
           <div class="phone-status"></div>
-          <div class="phone-nav"><span></span><strong>选择患者</strong><button class="nav-action">确定</button></div>
+          <div class="phone-nav"><span></span><strong>选择照护对象</strong><button class="nav-action">确定</button></div>
           <div class="content">
-            <h3>我的患者</h3>
             <div class="patient-list">
               <div class="patient-row selected">
                 <div>
@@ -517,16 +510,16 @@
                 <b class="checkmark">✓</b>
               </div>
             </div>
-            <button class="ghost add-patient">添加患者</button>
+            <button class="ghost add-patient">添加照护对象</button>
             <div class="toast-preview">功能正在开发中</div>
           </div>
         </div>
         <aside class="notes">
           <h3>页面说明</h3>
           <p>1. 入口：绑定第二台及后续设备时，在设备绑定完成后进入本页。</p>
-          <p>2. 当前版本仅展示一个患者，默认选中该患者。</p>
-          <p>3. 点击“确定”后，将当前设备关联到选中的患者，并进入 Wi-Fi 设置。</p>
-          <p>4. 点击“添加患者”时，吐司提示“功能正在开发中”。</p>
+          <p>2. 当前版本仅展示一个照护对象，默认选中该照护对象。</p>
+          <p>3. 点击“确定”后，将当前设备关联到选中的照护对象，并进入 Wi-Fi 设置。</p>
+          <p>4. 点击“添加照护对象”时，吐司提示“功能正在开发中”。</p>
         </aside>
       </section>
 
@@ -534,15 +527,14 @@
         <div class="page-head">
           <div>
             <span class="tag add">新增页面</span>
-            <h2>更换患者</h2>
-            <p>从设备详情页进入，用于更换当前设备关联的患者。</p>
+            <h2>更换照护对象</h2>
+            <p>从设备详情页进入，用于更换当前设备关联的照护对象。</p>
           </div>
         </div>
         <div class="phone">
           <div class="phone-status"></div>
-          <div class="phone-nav"><span data-goto="device-detail">‹</span><strong>更换患者</strong><button class="nav-action" data-goto="device-detail">确定</button></div>
+          <div class="phone-nav"><span data-goto="device-detail">‹</span><strong>更换照护对象</strong><button class="nav-action" data-goto="device-detail">确定</button></div>
           <div class="content">
-            <h3>我的患者</h3>
             <div class="patient-list">
               <div class="patient-row selected">
                 <div>
@@ -552,16 +544,16 @@
                 <b class="checkmark">✓</b>
               </div>
             </div>
-            <button class="ghost add-patient">添加患者</button>
+            <button class="ghost add-patient">添加照护对象</button>
             <div class="toast-preview">功能正在开发中</div>
           </div>
         </div>
         <aside class="notes">
           <h3>页面说明</h3>
-          <p>1. 入口：从设备详情页“当前患者 - 更换”进入。</p>
-          <p>2. 默认选中当前设备已关联的患者。</p>
-          <p>3. 点击“确定”后，当前设备改为关联选中的患者，并返回设备详情页。</p>
-          <p>4. 点击“添加患者”时，吐司提示“功能正在开发中”。</p>
+          <p>1. 入口：从设备详情页“当前照护对象 - 更换”进入。</p>
+          <p>2. 默认选中当前设备已关联的照护对象。</p>
+          <p>3. 点击“确定”后，当前设备改为关联选中的照护对象，并返回设备详情页。</p>
+          <p>4. 点击“添加照护对象”时，吐司提示“功能正在开发中”。</p>
         </aside>
       </section>
 
@@ -570,14 +562,14 @@
           <div>
             <span class="tag add">新增页面</span>
             <h2>亲情连接</h2>
-            <p>用于管理当前账号下的患者基础信息，后续可承接家庭组和亲友协作能力。</p>
+            <p>用于管理当前账号下的照护对象基础信息，后续可承接照护圈和亲友协作能力。</p>
           </div>
         </div>
         <div class="phone">
           <div class="phone-status"></div>
           <div class="phone-nav"><span data-goto="mine">‹</span><strong>亲情连接</strong><span></span></div>
           <div class="content">
-            <h3>我的患者</h3>
+            <h3>照护档案</h3>
             <div class="patient-list">
               <div class="patient-row" data-goto="family-basic-profile">
                 <div>
@@ -587,16 +579,16 @@
                 <b>›</b>
               </div>
             </div>
-            <button class="ghost add-patient">添加患者</button>
+            <button class="ghost add-patient">添加照护对象</button>
             <div class="toast-preview">功能正在开发中</div>
           </div>
         </div>
         <aside class="notes">
           <h3>页面说明</h3>
           <p>1. 入口：从“我的 - 亲情连接”进入。</p>
-          <p>2. 当前版本仅展示一个患者；后续家庭组能力可在本页继续扩展。</p>
-          <p>3. 选择已有患者后进入该患者的基础信息页，并预加载该患者已保存的信息。</p>
-          <p>4. 点击“添加患者”时，吐司提示“功能正在开发中”。</p>
+          <p>2. 当前版本仅展示一个照护对象；后续照护圈能力可在本页继续扩展。</p>
+          <p>3. 选择已有照护对象后进入该对象的基础信息页，并预加载该对象已保存的信息。</p>
+          <p>4. 点击“添加照护对象”时，吐司提示“功能正在开发中”。</p>
         </aside>
       </section>
 
@@ -642,7 +634,7 @@
           <div>
             <span class="tag add">新增页面</span>
             <h2>基础信息</h2>
-            <p>填写当前患者的基础信息，便于糖宝后续提供个体化分析与建议。</p>
+            <p>填写当前照护对象的基础信息，便于糖宝后续提供个体化分析与建议。</p>
           </div>
         </div>
         <div class="phone tall">
@@ -651,11 +643,21 @@
           <div class="phone-status"></div>
           <div class="phone-nav"><span>‹</span><strong>基础信息</strong><span></span></div>
           <div class="content">
-            <h3>让糖宝更懂您</h3>
-            <p class="sub">完善基础信息后，糖宝可结合您的血糖与健康资料，提供更个体化的分析与建议。</p>
+            <h3>让糖宝更懂Ta</h3>
+            <p class="sub">完善基础信息后，糖宝可结合照护对象的血糖与健康数据，提供更个体化的分析与建议。</p>
             <div class="tip light">可稍后从“我的 - 亲情连接”修改或补充。</div>
             <div class="form-group">
-              <div class="field"><label><span class="req">*</span>患者昵称</label><div>请输入</div></div>
+              <div class="field relationship-field">
+                <label><span class="req">*</span>照护对象</label>
+                <div class="therapy-options">
+                  <span class="therapy-chip">本人</span>
+                  <span class="therapy-chip selected">孩子</span>
+                  <span class="therapy-chip">父母</span>
+                  <span class="therapy-chip">配偶</span>
+                  <span class="therapy-chip">其他</span>
+                </div>
+              </div>
+              <div class="field"><label><span class="req">*</span>昵称</label><div>请输入</div></div>
               <div class="field"><label><span class="req">*</span>性别</label><div>请选择</div></div>
               <div class="field"><label><span class="req">*</span>出生日期</label><div>请选择</div></div>
               <div class="field"><label><span class="req">*</span>身高</label><div>请输入 cm</div></div>
@@ -682,24 +684,25 @@
             </div>
             <div class="tip">这些信息仅用于糖宝后续交流时参考，不会用于其他用途，也不会向任何第三方共享，请放心填写。</div>
           </div>
-          <button class="primary sticky">下一步</button>
+          <button class="primary sticky" data-goto="unit-bind">下一步</button>
         </div>
         <div class="notes-stack basic-profile-notes">
           <aside class="notes">
             <h3>页面说明</h3>
-            <p>1. 入口：新账号首次绑定首台设备时，在设备绑定完成后进入本页。后续多患者功能完成后，从“选择患者”或“更换患者”点击“添加患者”也进入本页。</p>
-            <p>2. 填写完成后进入 Wi-Fi 设置；后续流程为设置血糖源、设置血糖单位、模式设置与预览。</p>
+            <p>1. 入口：新账号注册后进入本页；后续多照护对象功能完成后，从“选择照护对象”或“更换照护对象”点击“添加照护对象”也进入本页。</p>
+            <p>2. 填写完成后进入血糖单位选择；后续流程为搜索设备、绑定设备、Wi-Fi 设置、血糖源设置、模式设置与预览。</p>
             <p>3. 本页字段均为必填。</p>
-            <p>4. 患者昵称：文本输入，用于“亲情连接”等患者列表展示；糖宝对话中默认使用该昵称称呼用户。</p>
-            <p>5. 性别：单选，男、女。</p>
-            <p>6. 出生日期、确诊时间均为年月日选择器。</p>
-            <p>7. 身高、体重：数字输入，身高用于后续计算 BMI。</p>
-            <p>8. 患病类型：T1DM（1型糖尿病）、T2DM（2型糖尿病）、GDM（妊娠糖尿病）、其他类型糖尿病。</p>
-            <p>9. 治疗方案：胰岛素泵、餐前+基础、降糖药物治疗、生活方式干预、预混胰岛素、周制剂、混合闭环胰岛素输注系统。</p>
+            <p>4. 照护对象：单选，本人、孩子、父母、配偶、其他；选择“其他”后展示文本输入框，限制 10 个字符。</p>
+            <p>5. 昵称：文本输入，用于“亲情连接”等照护档案列表展示；糖宝对话中默认使用该昵称称呼用户。</p>
+            <p>6. 性别：单选，男、女。</p>
+            <p>7. 出生日期、确诊时间均为年月日选择器。</p>
+            <p>8. 身高、体重：数字输入，身高用于后续计算 BMI。</p>
+            <p>9. 患病类型：T1DM（1型糖尿病）、T2DM（2型糖尿病）、GDM（妊娠糖尿病）、其他类型糖尿病。</p>
+            <p>10. 治疗方案：胰岛素泵、餐前+基础、降糖药物治疗、生活方式干预、预混胰岛素、周制剂、混合闭环胰岛素输注系统。</p>
           </aside>
           <aside class="notes">
-          <p>10. 治疗方案选中后，按方案继续展示对应子选项，子选项均为必填。本页仅示意“胰岛素泵”选中后展示“胰岛素类型、胰岛素泵类型、血糖监测”；“混合闭环胰岛素输注系统”的子项也为以上三个；其余方案的子项直接参考糖糖圈 App 既有治疗方案表单；各子项选项枚举见《治疗方案选项枚举》。</p>
-            <p>11. 治疗方案-胰岛素类型：同一类型内胰岛素互斥，即选择新的胰岛素时自动取消原已选项；胰岛素泵模式下，速效与短效类型之间也互斥。</p>
+          <p>11. 治疗方案选中后，按方案继续展示对应子选项，子选项均为必填。本页仅示意“胰岛素泵”选中后展示“胰岛素类型、胰岛素泵类型、血糖监测”；“混合闭环胰岛素输注系统”的子项也为以上三个；其余方案的子项直接参考糖糖圈 App 既有治疗方案表单；各子项选项枚举见《治疗方案选项枚举》。</p>
+            <p>12. 治疗方案-胰岛素类型：同一类型内胰岛素互斥，即选择新的胰岛素时自动取消原已选项；胰岛素泵模式下，速效与短效类型之间也互斥。</p>
           </aside>
         </div>
       </section>
@@ -721,11 +724,12 @@
           </div>
           <div class="content">
             <div class="profile-title-row">
-              <h3>让糖宝更懂您</h3>
+              <h3>让糖宝更懂Ta</h3>
               <button class="icon-button" aria-label="编辑基础信息">✎</button>
             </div>
             <div class="form-group readonly-profile">
-              <div class="field"><label>患者昵称</label><div>安安</div></div>
+              <div class="field"><label>照护对象</label><div>孩子</div></div>
+              <div class="field"><label>昵称</label><div>安安</div></div>
               <div class="field"><label>性别</label><div>女</div></div>
               <div class="field"><label>出生日期</label><div>2015-03-12</div></div>
               <div class="field"><label>身高</label><div>142 cm</div></div>
@@ -750,8 +754,8 @@
         <div class="notes-stack basic-profile-notes">
           <aside class="notes">
             <h3>页面说明</h3>
-            <p>1. 入口：从“我的 - 亲情连接 - 选择患者”进入本页。</p>
-            <p>2. 选择已有患者进入时，默认以只读态展示该患者已保存的基础信息。</p>
+            <p>1. 入口：从“我的 - 亲情连接 - 选择照护对象”进入本页。</p>
+            <p>2. 选择已有照护对象进入时，默认以只读态展示该对象已保存的基础信息。</p>
             <p>3. 顶部菜单按“血糖图表、基础信息”顺序展示；本页当前展示“基础信息”，血糖图表后续接入。</p>
             <p>4. 点击右上角编辑图标后进入编辑态；编辑态字段、必填校验和保存规则同“基础信息”页。</p>
           </aside>
@@ -1028,12 +1032,12 @@
               <tr><td>设备离线警报</td><td>Device Offline Alert</td></tr>
               <tr><td>设备已离线</td><td>Device offline</td></tr>
               <tr><td>10分钟</td><td>10 min</td></tr>
-              <tr><td>小睡 15 分钟</td><td>Snooze for 15 min</td></tr>
+              <tr><td>小睡 10 分钟</td><td>Snooze for 10 min</td></tr>
               <tr><td>停止</td><td>Stop</td></tr>
               <tr><td>高血糖 14.2 mmol/L</td><td>High glucose 14.2 mmol/L</td></tr>
               <tr><td>无数据 10分钟</td><td>No data 10 min</td></tr>
               <tr><td>已离线 10分钟</td><td>Offline 10 min</td></tr>
-              <tr><td>小睡中 · 14:59</td><td>Snoozing · 14:59</td></tr>
+              <tr><td>小睡中 · 09:59</td><td>Snoozing · 09:59</td></tr>
               <tr><td>停止本次警报</td><td>Stop this alert</td></tr>
               <tr><td>应用</td><td>Apply</td></tr>
               <tr><td>已应用</td><td>Applied</td></tr>
@@ -1048,14 +1052,17 @@
             <table class="copy-table">
               <tr><th>中文</th><th>英文建议</th></tr>
               <tr><td>我的</td><td>Me</td></tr>
-              <tr><td>亲情连接</td><td>Family connection</td></tr>
-              <tr><td>我的患者</td><td>My patients</td></tr>
-              <tr><td>选择患者</td><td>Choose patient</td></tr>
-              <tr><td>更换患者</td><td>Change patient</td></tr>
-              <tr><td>当前患者</td><td>Current patient</td></tr>
-              <tr><td>更换</td><td>Change</td></tr>
+              <tr><td>亲情连接</td><td>Care Connect</td></tr>
+              <tr><td>照护档案</td><td>Care Profiles</td></tr>
+              <tr><td>照护圈</td><td>Care Circle</td></tr>
+              <tr><td>创建照护圈</td><td>Create Care Circle</td></tr>
+              <tr><td>加入照护圈</td><td>Join Care Circle</td></tr>
+              <tr><td>选择照护对象</td><td>Select Profile</td></tr>
+              <tr><td>更换照护对象</td><td>Switch Profile</td></tr>
+              <tr><td>当前照护对象</td><td>Current profile</td></tr>
+              <tr><td>更换</td><td>Switch</td></tr>
               <tr><td>血糖图表</td><td>Glucose charts</td></tr>
-              <tr><td>添加患者</td><td>Add patient</td></tr>
+              <tr><td>添加照护对象</td><td>Add Profile</td></tr>
               <tr><td>功能正在开发中</td><td>This feature is under development.</td></tr>
               <tr><td>基础信息</td><td>Profile information</td></tr>
               <tr><td>账号与安全</td><td>Account &amp; Security</td></tr>
@@ -1071,10 +1078,16 @@
             <table class="copy-table">
               <tr><th>中文</th><th>英文建议</th></tr>
               <tr><td>基础信息</td><td>Profile information</td></tr>
-              <tr><td>让糖宝更懂您</td><td>Help Tangbao Understand You Better</td></tr>
-              <tr><td>完善基础信息后，糖宝可结合您的血糖与健康资料，提供更个体化的分析与建议。</td><td>This information you provide helps customize Tangbao to benefit you most.</td></tr>
-              <tr><td>可稍后从“我的 - 亲情连接”修改或补充。</td><td>You can change this any time from Me → Family connection.</td></tr>
-              <tr><td>患者昵称</td><td>Patient nickname</td></tr>
+              <tr><td>让糖宝更懂Ta</td><td>Help Tang Bao get to know them better</td></tr>
+              <tr><td>完善基础信息后，糖宝可结合照护对象的血糖与健康数据，提供更个体化的分析与建议。</td><td>Once their basic information is complete, Tang Bao can offer more personalized analysis and suggestions based on their glucose and health data.</td></tr>
+              <tr><td>可稍后从“我的 - 亲情连接”修改或补充。</td><td>You can change this any time from Me → Care Connect.</td></tr>
+              <tr><td>照护对象</td><td>Who is this profile for?</td></tr>
+              <tr><td>本人</td><td>Me</td></tr>
+              <tr><td>孩子</td><td>My Child</td></tr>
+              <tr><td>父母</td><td>My Parent</td></tr>
+              <tr><td>配偶</td><td>My Partner</td></tr>
+              <tr><td>其他</td><td>Other</td></tr>
+              <tr><td>昵称</td><td>Nickname</td></tr>
               <tr><td>性别</td><td>Gender</td></tr>
               <tr><td>男</td><td>Male</td></tr>
               <tr><td>女</td><td>Female</td></tr>
@@ -1158,6 +1171,16 @@
   <script src="./app.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
 

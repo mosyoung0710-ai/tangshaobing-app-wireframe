@@ -18,21 +18,21 @@
       </div>
       <nav class="nav" aria-label="页面导航">
         <button class="nav-item active" data-page="flow-overview">页面流转图</button>
-        <button class="nav-item" data-page="basic-profile">基础信息</button>
-        <button class="nav-item" data-page="unit-bind">绑定阶段：血糖单位</button>
-        <button class="nav-item" data-page="mode">模式设置与预览</button>
-        <button class="nav-item" data-page="alarm-snooze">警报小睡卡片</button>
-        <button class="nav-item" data-page="mine">我的</button>
-        <button class="nav-item" data-page="device-detail">设备详情</button>
-        <button class="nav-item" data-page="patient-list">亲情连接</button>
-        <button class="nav-item" data-page="select-patient-bind">选择患者</button>
-        <button class="nav-item" data-page="change-patient">更换患者</button>
-        <button class="nav-item" data-page="family-basic-profile">修改基础信息</button>
-        <button class="nav-item" data-page="unit-edit">修改血糖单位</button>
-        <button class="nav-item" data-page="account">账号与安全</button>
-        <button class="nav-item" data-page="language">多语言</button>
-        <button class="nav-item" data-page="english-copy">英文文案清单</button>
-        <button class="nav-item" data-page="dialogs">弹窗与异常提示</button>
+        <button class="nav-item" data-page="basic-profile">基础信息（P0）</button>
+        <button class="nav-item" data-page="unit-bind">绑定阶段：血糖单位（P0）</button>
+        <button class="nav-item" data-page="mode">模式设置与预览（P0/P1）</button>
+        <button class="nav-item" data-page="alarm-snooze">警报小睡卡片（P2）</button>
+        <button class="nav-item" data-page="mine">我的（P0）</button>
+        <button class="nav-item" data-page="device-detail">设备详情（P2）</button>
+        <button class="nav-item" data-page="patient-list">亲情连接（P2）</button>
+        <button class="nav-item" data-page="select-patient-bind">选择患者（P2）</button>
+        <button class="nav-item" data-page="change-patient">更换患者（P2）</button>
+        <button class="nav-item" data-page="family-basic-profile">修改基础信息（P0）</button>
+        <button class="nav-item" data-page="unit-edit">修改血糖单位（P0）</button>
+        <button class="nav-item" data-page="account">账号与安全（P0）</button>
+        <button class="nav-item" data-page="language">多语言（P0）</button>
+        <button class="nav-item" data-page="english-copy">英文文案清单（P0）</button>
+        <button class="nav-item" data-page="dialogs">弹窗与异常提示（P0）</button>
       </nav>
       <div class="legend">
         <span><i class="dot add"></i>新增</span>
@@ -229,7 +229,7 @@
           <div>
             <span class="tag change">改造页面</span>
             <h2>模式设置与预览</h2>
-            <p>基于现有页面新增亮度与音量、报警方式、警报音模式和小睡功能。</p>
+            <p>基于现有页面新增亮度与音量、报警方式、警报音模式和小睡功能（报警方式为 P0；亮度与音量、警报音模式、小睡功能开关和时长设置为 P1）。</p>
           </div>
         </div>
         <div class="screen-image-wrap">
@@ -450,9 +450,9 @@
         <aside class="notes">
           <h3>页面说明</h3>
           <p>1. 底部新增“我的”Tab。</p>
-          <p>2. 底部“设备”Tab 承载目前已开发的所有设备相关功能。</p>
-          <p>3. 点击“亲情连接”进入患者列表，可查看或修改已有患者的基础信息；点击“添加患者”时 toast 提示“功能正在开发中”。</p>
-          <p>4. 点击“我的设备”进入现有“我的设备”页。</p>
+          <p>2. 底部“设备”Tab 进入现有“我的设备”页，承载目前已开发的所有设备相关功能。</p>
+          <p>3. 点击“亲情连接”进入患者列表，可查看或修改已有患者的基础信息；点击“添加患者”时吐司提示“功能正在开发中”。</p>
+          <p>4. 点击“我的设备”同样进入现有“我的设备”页。</p>
           <p>5. “账号与安全”单独成组展示；“多语言”入口位于“账号与安全”下方。</p>
           <p>6. 退出登录从原设备列表页迁移到“我的”页底部，沿用现有退出登录能力。</p>
         </aside>
@@ -526,7 +526,7 @@
           <p>1. 入口：绑定第二台及后续设备时，在设备绑定完成后进入本页。</p>
           <p>2. 当前版本仅展示一个患者，默认选中该患者。</p>
           <p>3. 点击“确定”后，将当前设备关联到选中的患者，并进入 Wi-Fi 设置。</p>
-          <p>4. 点击“添加患者”时，toast 提示“功能正在开发中”。</p>
+          <p>4. 点击“添加患者”时，吐司提示“功能正在开发中”。</p>
         </aside>
       </section>
 
@@ -561,7 +561,7 @@
           <p>1. 入口：从设备详情页“当前患者 - 更换”进入。</p>
           <p>2. 默认选中当前设备已关联的患者。</p>
           <p>3. 点击“确定”后，当前设备改为关联选中的患者，并返回设备详情页。</p>
-          <p>4. 点击“添加患者”时，toast 提示“功能正在开发中”。</p>
+          <p>4. 点击“添加患者”时，吐司提示“功能正在开发中”。</p>
         </aside>
       </section>
 
@@ -596,7 +596,7 @@
           <p>1. 入口：从“我的 - 亲情连接”进入。</p>
           <p>2. 当前版本仅展示一个患者；后续家庭组能力可在本页继续扩展。</p>
           <p>3. 选择已有患者后进入该患者的基础信息页，并预加载该患者已保存的信息。</p>
-          <p>4. 点击“添加患者”时，toast 提示“功能正在开发中”。</p>
+          <p>4. 点击“添加患者”时，吐司提示“功能正在开发中”。</p>
         </aside>
       </section>
 
@@ -717,7 +717,7 @@
           <div class="phone-nav"><span data-goto="patient-list">‹</span><strong>安安</strong><span></span></div>
           <div class="patient-tabs">
             <button>血糖图表</button>
-            <button class="active">基础信息</button>
+            <button class="active">基础信息（P0）</button>
           </div>
           <div class="content">
             <div class="profile-title-row">
@@ -777,7 +777,7 @@
         <aside class="notes">
           <h3>页面说明</h3>
           <p>1. 从“我的 - 账号与安全”进入。</p>
-          <p>2. 点击“密码设置”进入现有“设置新密码”页。</p>
+          <p>2. 点击“密码设置”进入现有“忘记密码”页，后续页面标题由 UI 调整为“修改密码”。</p>
         </aside>
       </section>
 
@@ -807,8 +807,8 @@
           <p>3. 首次启动时按手机系统语言初始化：系统语言为英语时默认 English；其他语言默认简体中文。用户保存语言后，再次进入按已保存语言展示。</p>
           <p>4. 进入页面时展示当前已设置语言；当前语言用对勾标识。</p>
           <p>5. 未选择另一种语言时，“确定”按钮不可点击；选择另一种语言后，“确定”按钮可点击。</p>
-          <p>6. 点击“确定”后保存语言设置，并重新加载 App 语言包；设置成功后返回“我的”。</p>
-          <p>7. 保存失败时，保持当前语言不变，并 toast 提示“保存失败，请重试”。</p>
+          <p>6. 点击“确定”后保存语言设置，并重新加载 App 语言包；如处理耗时较长，需展示“设置中”吐司；设置完成后展示“设置成功”吐司，并返回“我的”。</p>
+          <p>7. 保存失败时，保持当前语言不变，并吐司提示“保存失败，请重试”。</p>
           <p>8. 语言切换范围仅覆盖 App 内页面文案、设备相关设置文案和弹窗文案；设备屏幕保持现有语言。</p>
         </aside>
       </section>
@@ -839,7 +839,8 @@
               <tr><td>重试</td><td>Retry</td></tr>
               <tr><td>返回</td><td>Back</td></tr>
               <tr><td>加载中</td><td>Loading...</td></tr>
-              <tr><td>设置中</td><td>Setting up...</td></tr>
+              <tr><td>设置中</td><td>Setting...</td></tr>
+              <tr><td>设置成功</td><td>Success</td></tr>
               <tr><td>保存中</td><td>Saving...</td></tr>
               <tr><td>请稍候</td><td>Please wait.</td></tr>
               <tr><td>暂无数据</td><td>No data</td></tr>
@@ -1157,5 +1158,14 @@
   <script src="./app.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 

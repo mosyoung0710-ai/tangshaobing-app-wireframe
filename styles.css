@@ -48,13 +48,18 @@ button {
   position: sticky;
   top: 0;
   height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .brand {
   display: flex;
   gap: 12px;
   align-items: center;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
+  flex: 0 0 auto;
 }
 
 .brand-mark {
@@ -79,17 +84,22 @@ button {
 
 .nav {
   display: grid;
-  gap: 8px;
+  gap: 7px;
+  overflow-y: auto;
+  min-height: 0;
+  flex: 1 1 auto;
+  padding-right: 4px;
 }
 
 .nav-item {
   width: 100%;
-  padding: 12px 14px;
+  padding: 10px 14px;
   text-align: left;
   color: var(--ink);
   background: #f5f7fb;
   border: 1px solid transparent;
   border-radius: 8px;
+  line-height: 1.35;
 }
 
 .nav-item.active {
@@ -100,11 +110,12 @@ button {
 }
 
 .legend {
-  margin-top: 28px;
+  margin-top: 14px;
   display: grid;
   gap: 10px;
   color: var(--muted);
   font-size: 13px;
+  flex: 0 0 auto;
 }
 
 .dot {
@@ -1622,6 +1633,10 @@ button {
   .sidebar {
     position: static;
     height: auto;
+    overflow: visible;
+  }
+  .nav {
+    overflow: visible;
   }
   .page,
   .page.active {

@@ -233,7 +233,7 @@
         <aside class="notes">
           <h3>页面说明</h3>
           <p>1. 本页在现有“模式设置与预览”基础上新增“亮度与音量”“报警方式”“警报音模式”“小睡功能”配置。</p>
-          <p>2. 亮度与音量：屏幕亮度、设备音量均通过滑块调节，右侧根据滑块位置展示 0-100 的整数；保存后作用于当前模式。</p>
+          <p>2. 亮度与音量：屏幕亮度、设备音量均通过滑块调节，右侧根据滑块位置展示 0-100 的整数；屏幕亮度拖动时设备可实时预览，但只有点击“保存”后才正式生效并作用于当前模式。</p>
           <p>3. 报警方式：新增声音、屏幕闪烁、振动、设备发光四个开关；保存后作用于当前模式。</p>
           <p>4. 关闭“声音警报”后，“警报音模式”置灰不可选；重新打开“声音警报”后恢复可选。</p>
           <p>5. 报警方式关闭时实时校验：无论用户按什么顺序关闭，当只剩最后一种报警方式开启时，若用户继续关闭最后一个开关，则弹出“确认关闭全部报警方式”弹窗。</p>
@@ -638,8 +638,9 @@
           </div>
         </div>
         <div class="phone tall">
-          <span class="callout-dot" data-callout="10" data-arch="-92" style="top: 836px; right: 246px;">10</span>
-          <span class="callout-dot" data-callout="11" style="top: 950px; right: 18px;">11</span>
+          <span class="callout-dot" data-callout="10" data-arch="-92" style="top: 908px; right: 250px;">10</span>
+          <span class="callout-dot" data-callout="11" style="top: 1092px; right: 18px;">11</span>
+          <span class="callout-dot" data-callout="12" style="top: 1032px; right: 42px;">12</span>
           <div class="phone-status"></div>
           <div class="phone-nav"><span>‹</span><strong>基础信息</strong><span></span></div>
           <div class="content">
@@ -712,7 +713,7 @@
           <div>
             <span class="tag add">新增页面</span>
             <h2>修改基础信息</h2>
-            <p>从“亲情连接”进入，用于查看或修改指定患者的基础信息。</p>
+            <p>从“亲情连接”进入，用于查看或修改指定照护对象的基础信息。</p>
           </div>
         </div>
         <div class="phone tall">
@@ -725,7 +726,7 @@
           <div class="content">
             <div class="profile-title-row">
               <h3>让糖宝更懂Ta</h3>
-              <button class="icon-button" aria-label="编辑基础信息">✎</button>
+              <button class="profile-edit-action" aria-label="编辑基础信息">编辑</button>
             </div>
             <div class="form-group readonly-profile">
               <div class="field"><label>照护对象</label><div>孩子</div></div>
@@ -757,7 +758,8 @@
             <p>1. 入口：从“我的 - 亲情连接 - 选择照护对象”进入本页。</p>
             <p>2. 选择已有照护对象进入时，默认以只读态展示该对象已保存的基础信息。</p>
             <p>3. 顶部菜单按“血糖图表、基础信息”顺序展示；本页当前展示“基础信息”，血糖图表后续接入。</p>
-            <p>4. 点击右上角编辑图标后进入编辑态；编辑态字段、必填校验和保存规则同“基础信息”页。</p>
+            <p>4. 点击右上角“编辑”后进入编辑态；进入编辑态后右上角按钮文案变为“保存”。</p>
+            <p>5. 进入编辑态后，用户修改任一字段内容时，“保存”按钮点亮；若修改后恢复为原内容，“保存”按钮重新置灰。点击保存后校验必填项，校验通过后保存并返回只读态。</p>
           </aside>
         </div>
       </section>
@@ -837,6 +839,7 @@
               <tr><td>设置</td><td>Settings</td></tr>
               <tr><td>下一步</td><td>Continue</td></tr>
               <tr><td>保存</td><td>Save</td></tr>
+              <tr><td>编辑</td><td>Edit</td></tr>
               <tr><td>完成</td><td>Done</td></tr>
               <tr><td>确定</td><td>Confirm</td></tr>
               <tr><td>取消</td><td>Cancel</td></tr>
@@ -1007,6 +1010,7 @@
               <tr><td>亮度与音量</td><td>Brightness and volume</td></tr>
               <tr><td>屏幕亮度</td><td>Screen Brightness</td></tr>
               <tr><td>设备音量</td><td>Device Volume</td></tr>
+              <tr><td>调整时可实时预览效果，保存后生效。</td><td>Changes are previewed in real time and take effect after saving.</td></tr>
               <tr><td>警报设置</td><td>Alert Settings</td></tr>
               <tr><td>高血糖</td><td>High Glucose</td></tr>
               <tr><td>低血糖</td><td>Low Glucose</td></tr>

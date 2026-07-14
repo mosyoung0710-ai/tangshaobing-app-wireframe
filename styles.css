@@ -1269,6 +1269,17 @@ button {
   font-weight: 800;
 }
 
+.profile-edit-action {
+  min-width: 48px;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: #0b7786;
+  background: #e9fbfd;
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .readonly-profile .field {
   background: #fff;
 }

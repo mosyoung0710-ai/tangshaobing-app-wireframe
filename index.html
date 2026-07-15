@@ -233,12 +233,13 @@
         <aside class="notes">
           <h3>页面说明</h3>
           <p>1. 本页在现有“模式设置与预览”基础上新增“亮度与音量”“报警方式”“警报音模式”“小睡功能”配置。</p>
-          <p>2. 亮度与音量：屏幕亮度、设备音量均通过滑块调节，右侧根据滑块位置展示 0-100 的整数；屏幕亮度拖动时设备可实时预览，但只有点击“保存”后才正式生效并作用于当前模式。</p>
-          <p>3. 报警方式：新增声音、屏幕闪烁、振动、设备发光四个开关；保存后作用于当前模式。</p>
-          <p>4. 关闭“声音警报”后，“警报音模式”置灰不可选；重新打开“声音警报”后恢复可选。</p>
-          <p>5. 报警方式关闭时实时校验：无论用户按什么顺序关闭，当只剩最后一种报警方式开启时，若用户继续关闭最后一个开关，则弹出“确认关闭全部报警方式”弹窗。</p>
-          <p>6. 小睡时长可设置范围为 6-180 的正整数，默认值为 10 分钟。</p>
-          <p>7. 小睡功能关闭时，“小睡时长”置灰不可编辑。</p>
+          <p>2. 展示预览：按正常、低血糖、高血糖、无数据、设备离线分别展示；低血糖与高血糖颜色按 UI 设计稿分别处理。</p>
+          <p>3. 亮度与音量：屏幕亮度、设备音量均通过滑块调节，右侧根据滑块位置展示 0-100 的整数；屏幕亮度拖动时设备可实时预览，但只有点击“保存”后才正式生效并作用于当前模式。</p>
+          <p>4. 报警方式：新增声音、屏幕闪烁、振动、设备发光四个开关；保存后作用于当前模式。</p>
+          <p>5. 关闭“声音警报”后，“警报音模式”置灰不可选；重新打开“声音警报”后恢复可选。</p>
+          <p>6. 报警方式关闭时实时校验：无论用户按什么顺序关闭，当只剩最后一种报警方式开启时，若用户继续关闭最后一个开关，则弹出“确认关闭全部报警方式”弹窗。</p>
+          <p>7. 小睡时长可设置范围为 6-180 的正整数，默认值为 10 分钟。</p>
+          <p>8. 小睡功能关闭时，“小睡时长”置灰不可编辑。</p>
         </aside>
       </section>
 
@@ -445,7 +446,7 @@
           <h3>页面说明</h3>
           <p>1. 底部新增“我的”Tab。</p>
           <p>2. 底部“设备”Tab 进入现有“我的设备”页，承载目前已开发的所有设备相关功能。</p>
-          <p>3. 点击“亲情连接”进入照护档案列表，可查看或修改已有照护对象的基础信息；点击“添加照护对象”时吐司提示“功能正在开发中”。</p>
+          <p>3. 点击“亲情连接”进入照护档案列表，可查看或修改已有照护对象的基础信息。</p>
           <p>4. 点击“我的设备”同样进入现有“我的设备”页。</p>
           <p>5. “账号与安全”单独成组展示；“多语言”入口位于“账号与安全”下方。</p>
           <p>6. 退出登录从原设备列表页迁移到“我的”页底部，沿用现有退出登录能力。</p>
@@ -505,13 +506,11 @@
               <div class="patient-row selected">
                 <div>
                   <strong>安安</strong>
-                  <p>T1DM · 胰岛素泵</p>
+                  <p><span class="gender-icon female">♀</span>17岁（糖11年）｜胰岛素泵</p>
                 </div>
                 <b class="checkmark">✓</b>
               </div>
             </div>
-            <button class="ghost add-patient">添加照护对象</button>
-            <div class="toast-preview">功能正在开发中</div>
           </div>
         </div>
         <aside class="notes">
@@ -519,7 +518,6 @@
           <p>1. 入口：绑定第二台及后续设备时，在设备绑定完成后进入本页。</p>
           <p>2. 当前版本仅展示一个照护对象，默认选中该照护对象。</p>
           <p>3. 点击“确定”后，将当前设备关联到选中的照护对象，并进入 Wi-Fi 设置。</p>
-          <p>4. 点击“添加照护对象”时，吐司提示“功能正在开发中”。</p>
         </aside>
       </section>
 
@@ -539,13 +537,11 @@
               <div class="patient-row selected">
                 <div>
                   <strong>安安</strong>
-                  <p>T1DM · 胰岛素泵</p>
+                  <p><span class="gender-icon female">♀</span>17岁（糖11年）｜胰岛素泵</p>
                 </div>
                 <b class="checkmark">✓</b>
               </div>
             </div>
-            <button class="ghost add-patient">添加照护对象</button>
-            <div class="toast-preview">功能正在开发中</div>
           </div>
         </div>
         <aside class="notes">
@@ -553,7 +549,6 @@
           <p>1. 入口：从设备详情页“当前照护对象 - 更换”进入。</p>
           <p>2. 默认选中当前设备已关联的照护对象。</p>
           <p>3. 点击“确定”后，当前设备改为关联选中的照护对象，并返回设备详情页。</p>
-          <p>4. 点击“添加照护对象”时，吐司提示“功能正在开发中”。</p>
         </aside>
       </section>
 
@@ -574,13 +569,11 @@
               <div class="patient-row" data-goto="family-basic-profile">
                 <div>
                   <strong>安安</strong>
-                  <p>T1DM · 胰岛素泵</p>
+                  <p><span class="gender-icon female">♀</span>17岁（糖11年）｜胰岛素泵</p>
                 </div>
                 <b>›</b>
               </div>
             </div>
-            <button class="ghost add-patient">添加照护对象</button>
-            <div class="toast-preview">功能正在开发中</div>
           </div>
         </div>
         <aside class="notes">
@@ -588,7 +581,6 @@
           <p>1. 入口：从“我的 - 亲情连接”进入。</p>
           <p>2. 当前版本仅展示一个照护对象；后续照护圈能力可在本页继续扩展。</p>
           <p>3. 选择已有照护对象后进入该对象的基础信息页，并预加载该对象已保存的信息。</p>
-          <p>4. 点击“添加照护对象”时，吐司提示“功能正在开发中”。</p>
         </aside>
       </section>
 
@@ -690,7 +682,7 @@
         <div class="notes-stack basic-profile-notes">
           <aside class="notes">
             <h3>页面说明</h3>
-            <p>1. 入口：新账号注册后进入本页；后续多照护对象功能完成后，从“选择照护对象”或“更换照护对象”点击“添加照护对象”也进入本页。</p>
+            <p>1. 入口：新账号注册后进入本页。</p>
             <p>2. 填写完成后进入血糖单位选择；后续流程为搜索设备、绑定设备、Wi-Fi 设置、血糖源设置、模式设置与预览。</p>
             <p>3. 本页字段均为必填。</p>
             <p>4. 照护对象：单选，本人、孩子、父母、配偶、其他；选择“其他”后展示文本输入框，限制 10 个字符。</p>
@@ -726,7 +718,6 @@
           <div class="content">
             <div class="profile-title-row">
               <h3>让糖宝更懂Ta</h3>
-              <button class="profile-edit-action" aria-label="编辑基础信息">编辑</button>
             </div>
             <div class="form-group readonly-profile">
               <div class="field"><label>照护对象</label><div>孩子</div></div>
@@ -751,6 +742,10 @@
             </div>
             <div class="tip">这些信息仅用于糖宝后续交流时参考，不会用于其他用途，也不会向任何第三方共享。</div>
           </div>
+          <div class="bottom-actions">
+            <button class="primary">编辑</button>
+            <button class="secondary disabled">保存</button>
+          </div>
         </div>
         <div class="notes-stack basic-profile-notes">
           <aside class="notes">
@@ -758,8 +753,8 @@
             <p>1. 入口：从“我的 - 亲情连接 - 选择照护对象”进入本页。</p>
             <p>2. 选择已有照护对象进入时，默认以只读态展示该对象已保存的基础信息。</p>
             <p>3. 顶部菜单按“血糖图表、基础信息”顺序展示；本页当前展示“基础信息”，血糖图表后续接入。</p>
-            <p>4. 点击右上角“编辑”后进入编辑态；进入编辑态后右上角按钮文案变为“保存”。</p>
-            <p>5. 进入编辑态后，用户修改任一字段内容时，“保存”按钮点亮；若修改后恢复为原内容，“保存”按钮重新置灰。点击保存后校验必填项，校验通过后保存并返回只读态。</p>
+            <p>4. 底部吸底操作区包含“编辑”和“保存”。默认只读态下“编辑”可点击，“保存”置灰。</p>
+            <p>5. 点击“编辑”后进入编辑态；用户修改任一字段内容时，“保存”按钮点亮；若修改后恢复为原内容，“保存”按钮重新置灰。点击保存后校验必填项，校验通过后保存并返回只读态。</p>
           </aside>
         </div>
       </section>
@@ -924,16 +919,15 @@
             <h3>页面：Wi-Fi 设置 / 选择 Wi-Fi / 连接状态（对应设计图 22-27、37-38）</h3>
             <table class="copy-table">
               <tr><th>中文</th><th>英文建议</th></tr>
-              <tr><td>Wi-Fi设置</td><td>Wi-Fi Settings</td></tr>
-              <tr><td>Wi-Fi 设置</td><td>Wi-Fi Settings</td></tr>
-              <tr><td>请选择Wi-Fi</td><td>Choose a Wi-Fi network</td></tr>
-              <tr><td>选择Wi-Fi</td><td>Choose a Wi-Fi network</td></tr>
-              <tr><td>选择 Wi-Fi</td><td>Choose a Wi-Fi network</td></tr>
+              <tr><td>Wi-Fi设置（绑定流程页面标题）</td><td>Set up Wi-Fi</td></tr>
+              <tr><td>选择Wi-Fi（页面标题/列表页标题）</td><td>Choose a Wi-Fi network</td></tr>
+              <tr><td>请选择Wi-Fi（输入框占位）</td><td>Select a Wi-Fi network</td></tr>
+              <tr><td>选择Wi-Fi（按钮）</td><td>Choose</td></tr>
               <tr><td>更换Wi-Fi</td><td>Change Wi-Fi network</td></tr>
               <tr><td>请输入Wi-Fi密码</td><td>Wi-Fi password</td></tr>
               <tr><td>取消</td><td>Cancel</td></tr>
               <tr><td>确定</td><td>Confirm</td></tr>
-              <tr><td>连接失败</td><td>Connection failed</td></tr>
+              <tr><td>连接失败</td><td>Couldn't connect to Wi-Fi</td></tr>
               <tr><td>设备无响应，请将设备靠近路由器重试</td><td>Device not responding. Move the device closer to the router and try again.</td></tr>
               <tr><td>Wi-Fi已连接成功</td><td>Wi-Fi connected</td></tr>
               <tr><td>已连接</td><td>Connected</td></tr>
@@ -968,7 +962,7 @@
               <tr><td>糖哨兵</td><td>GluSentry</td></tr>
               <tr><td>设备已离线</td><td>Device offline</td></tr>
               <tr><td>添加其他设备</td><td>Add Another Device</td></tr>
-              <tr><td>Wi-Fi设置</td><td>Wi-Fi Settings</td></tr>
+              <tr><td>Wi-Fi设置</td><td>Wi-Fi settings</td></tr>
               <tr><td>血糖源设置</td><td>CGM Connection</td></tr>
               <tr><td>模式设置与预览</td><td>Mode Settings &amp; Preview</td></tr>
               <tr><td>解绑设备</td><td>Unpair Device</td></tr>
@@ -988,7 +982,7 @@
               <tr><th>中文</th><th>英文建议</th></tr>
               <tr><td>血糖单位</td><td>Glucose Unit</td></tr>
               <tr><td>选择血糖单位</td><td>Choose Glucose Unit</td></tr>
-              <tr><td>设备和 App 将按所选单位显示血糖值。</td><td>The device and app will display readings in the selected unit.</td></tr>
+              <tr><td>设备和 App 将按所选单位显示血糖值。</td><td>The device and app will display glucose values in the selected unit.</td></tr>
               <tr><td>选择后仍可在“我的”中修改。</td><td>You can change this later from Me.</td></tr>
             </table>
           </div>
@@ -998,37 +992,38 @@
             <table class="copy-table">
               <tr><th>中文</th><th>英文建议</th></tr>
               <tr><td>模式设置与预览</td><td>Mode Settings &amp; Preview</td></tr>
-              <tr><td>工作模式</td><td>At work</td></tr>
-              <tr><td>居家模式</td><td>Home Mode</td></tr>
+              <tr><td>工作模式</td><td>Work mode</td></tr>
+              <tr><td>居家模式</td><td>Home mode</td></tr>
               <tr><td>展示预览</td><td>Display Preview</td></tr>
               <tr><td>正常状态</td><td>In Range</td></tr>
-              <tr><td>高、低血糖状态</td><td>High / Low Glucose</td></tr>
+              <tr><td>低血糖状态</td><td>Low</td></tr>
+              <tr><td>高血糖状态</td><td>High</td></tr>
               <tr><td>无数据状态</td><td>No Data</td></tr>
               <tr><td>设备离线状态</td><td>Device Offline</td></tr>
               <tr><td>设备已离线</td><td>Device offline</td></tr>
-              <tr><td>请检查您的血糖数据源是否正常同步数据</td><td>Check whether your glucose data source is syncing properly.</td></tr>
+              <tr><td>请检查您的血糖数据源是否正常同步数据</td><td>Check whether your CGM is syncing properly.</td></tr>
               <tr><td>亮度与音量</td><td>Brightness and volume</td></tr>
               <tr><td>屏幕亮度</td><td>Screen Brightness</td></tr>
               <tr><td>设备音量</td><td>Device Volume</td></tr>
               <tr><td>调整时可实时预览效果，保存后生效。</td><td>Changes are previewed in real time and take effect after saving.</td></tr>
               <tr><td>警报设置</td><td>Alert Settings</td></tr>
-              <tr><td>高血糖</td><td>High Glucose</td></tr>
-              <tr><td>低血糖</td><td>Low Glucose</td></tr>
+              <tr><td>高血糖</td><td>High</td></tr>
+              <tr><td>低血糖</td><td>Low</td></tr>
               <tr><td>无数据</td><td>No Data</td></tr>
               <tr><td>设备离线</td><td>Device Offline</td></tr>
               <tr><td>报警方式</td><td>Alert Preferences</td></tr>
-              <tr><td>声音警报</td><td>Sound</td></tr>
-              <tr><td>屏幕闪烁警报</td><td>Screen Flash</td></tr>
+              <tr><td>声音警报</td><td>Audio</td></tr>
+              <tr><td>屏幕闪烁警报</td><td>Display flash</td></tr>
               <tr><td>振动警报</td><td>Vibration</td></tr>
-              <tr><td>设备发光</td><td>Glow Light</td></tr>
+              <tr><td>设备发光</td><td>Device light</td></tr>
               <tr><td>开启后，设备平常发暖黄色光，报警时发橙红色光。</td><td>When enabled, the device glows warm yellow normally and orange-red during alerts.</td></tr>
               <tr><td>警报音模式</td><td>Alert sound pattern</td></tr>
-              <tr><td>规律</td><td>Regular</td></tr>
+              <tr><td>规律</td><td>Standard</td></tr>
               <tr><td>随机</td><td>Random</td></tr>
               <tr><td>小睡功能</td><td>Snooze</td></tr>
               <tr><td>小睡时长</td><td>Snooze duration</td></tr>
               <tr><td>开启后，短按功能键可暂停报警；小睡结束后，若仍超阈值将恢复报警。</td><td>When enabled, briefly press the function button to pause alerts. Alerts will resume after the snooze period if the condition persists.</td></tr>
-              <tr><td>高血糖警报</td><td>High Glucose Alert</td></tr>
+              <tr><td>高血糖警报</td><td>High glucose alert</td></tr>
               <tr><td>当前血糖</td><td>Current glucose</td></tr>
               <tr><td>14.2 mmol/L · 5分钟前</td><td>14.2 mmol/L · 5 min ago</td></tr>
               <tr><td>无数据警报</td><td>No Data Alert</td></tr>
@@ -1038,7 +1033,7 @@
               <tr><td>10分钟</td><td>10 min</td></tr>
               <tr><td>小睡 10 分钟</td><td>Snooze for 10 min</td></tr>
               <tr><td>停止</td><td>Stop</td></tr>
-              <tr><td>高血糖 14.2 mmol/L</td><td>High glucose 14.2 mmol/L</td></tr>
+              <tr><td>高血糖 14.2 mmol/L</td><td>High 14.2 mmol/L</td></tr>
               <tr><td>无数据 10分钟</td><td>No data 10 min</td></tr>
               <tr><td>已离线 10分钟</td><td>Offline 10 min</td></tr>
               <tr><td>小睡中 · 09:59</td><td>Snoozing · 09:59</td></tr>
@@ -1066,8 +1061,6 @@
               <tr><td>当前照护对象</td><td>Current profile</td></tr>
               <tr><td>更换</td><td>Switch</td></tr>
               <tr><td>血糖图表</td><td>Glucose charts</td></tr>
-              <tr><td>添加照护对象</td><td>Add Profile</td></tr>
-              <tr><td>功能正在开发中</td><td>This feature is under development.</td></tr>
               <tr><td>基础信息</td><td>Profile information</td></tr>
               <tr><td>账号与安全</td><td>Account &amp; Security</td></tr>
               <tr><td>多语言</td><td>Language</td></tr>

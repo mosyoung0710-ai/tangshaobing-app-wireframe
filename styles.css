@@ -999,9 +999,13 @@ button {
 }
 
 .patient-row p {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   margin: 4px 0 0;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 15px;
+  line-height: 1.35;
 }
 
 .patient-row b {
@@ -1015,6 +1019,27 @@ button {
   color: var(--primary-dark);
   font-size: 20px;
   font-weight: 900;
+}
+
+.gender-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.gender-icon.female {
+  background: #64c88a;
+}
+
+.gender-icon.male {
+  background: #5aa7ff;
 }
 
 .add-patient {
@@ -1278,6 +1303,43 @@ button {
   background: #e9fbfd;
   font-size: 14px;
   font-weight: 800;
+}
+
+.bottom-actions {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 14px 18px 18px;
+  border-top: 1px solid #eef1f6;
+  background: rgba(255, 255, 255, .96);
+  backdrop-filter: blur(8px);
+}
+
+.bottom-actions button {
+  height: 50px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.bottom-actions .primary {
+  color: #ffffff;
+  background: #ff9d32;
+}
+
+.bottom-actions .secondary {
+  color: #ff9d32;
+  border: 1px solid #ff9d32;
+  background: #ffffff;
+}
+
+.bottom-actions .secondary.disabled {
+  color: #cbd0d8;
+  border-color: #e5e7eb;
+  background: #ffffff;
 }
 
 .readonly-profile .field {

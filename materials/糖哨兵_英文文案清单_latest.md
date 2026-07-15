@@ -1,0 +1,294 @@
+# 糖哨兵 App 英文文案清单
+
+- 说明：固定链接版，供 TAPD 或其他需求平台长期引用；后续如文案更新，仅覆盖本文件内容，不再因日期改文件链接。
+- 品牌英文名：GluSentry
+- 用途：供多语言文案评审、二次润色和前端实现参考。
+- 说明：表格按页面/流程归并；同一页面的输入态、异常态、明文/暗文态已去重。
+
+## 通用与导航（全局通用）
+
+| 中文 | 英文建议 |
+|---|---|
+| 糖哨兵 | GluSentry |
+| 您的全天候血糖守护者 | Your 24/7 glucose guardian |
+| 设备 | Device |
+| 我的 | Me |
+| 设置 | Settings |
+| 下一步 | Continue |
+| 保存 | Save |
+| 编辑 | Edit |
+| 完成 | Done |
+| 确定 | Confirm |
+| 取消 | Cancel |
+| 重试 | Retry |
+| 返回 | Back |
+| 加载中 | Loading... |
+| 设置中 | Setting... |
+| 设置成功 | Success |
+| 保存中 | Saving... |
+| 请稍候 | Please wait. |
+| 暂无数据 | No data |
+| 已设置 | Set |
+| 未设置 | Not set |
+| 已连接 | Connected |
+| 未连接 | Not connected |
+| 已应用 | Applied |
+| 应用 | Apply |
+## 页面：登录 / 注册 / 忘记密码（对应设计图 1-13）
+
+| 中文 | 英文建议 |
+|---|---|
+| 验证码登录 | Sign in with Code |
+| 密码登录 | Sign in with Password |
+| 请输入手机号码 | Phone number |
+| 请输入账号密码 | Password |
+| 请输入验证码 | Verification code |
+| 获取验证码 | Get code |
+| 52s 后重发 | Resend in 52s |
+| 登录 | Sign In |
+| 忘记密码？ | Forgot password? |
+| 没有账号？ | Don’t have an account? |
+| 立即注册 | Sign Up |
+| 已有账号？ | Already have an account? |
+| 去登录 | Sign In |
+| 未注册的手机号验证通过后将自动注册并登录 | Unregistered numbers will be automatically signed up and logged in. |
+| 我已阅读并同意《糖哨兵服务条款》和《隐私政策》 | I have read and agree to the GluSentry Terms of Service and Privacy Policy. |
+| 《糖哨兵服务条款》 | GluSentry Terms of Service |
+| 《隐私政策》 | Privacy Policy |
+| 同意并继续 | Agree and Continue |
+| 请输入正确手机号码 | Enter a valid phone number. |
+| 请输入正确密码 | Check your password. |
+| 验证码已超时/验证码错误/验证码失效 | Verification code expired / incorrect / invalid. |
+| 欢迎注册糖哨兵 | Welcome to GluSentry |
+| 请输入 6–16 位密码，支持数字、字母及符号 | Use 6–16 characters. Numbers, letters, and symbols are supported. |
+| 忘记密码 | Forgot Password |
+| 请输入手机号码和验证码 | Use your mobile number and verification code. |
+| 设置新密码 | Set New Password |
+| 输入新密码 | New Password |
+| 您的新密码必须不同于以前使用的密码 | Your new password must be different from your previous password. |
+| 请输入新密码 | New password |
+| 请再次输入密码 | Confirm password |
+| 密码长度不能少于 6 位 | Password must be at least 6 characters. |
+| 两次密码不一致，请检查 | Passwords do not match. |
+
+## 页面：添加设备 / 搜索设备 / 蓝牙连接（对应设计图 14-21）
+
+| 中文 | 英文建议 |
+|---|---|
+| 添加设备 | Add Device |
+| 尚未添加任何设备 | No devices added yet |
+| 请选择需要连接的设备 | Select the device to connect. |
+| 未找到您的设备？ | Can’t find your device? |
+| 重新扫描 | Scan Again |
+| 连接 | Connect |
+| 未搜索到设备 | No devices found. |
+| 请检查设备是否处于可发现状态 | Make sure the device is discoverable. |
+| 请将手机尽量靠近要添加的设备 | Keep your phone close to the device you want to add. |
+| 重新搜索 | Search Again |
+| 连接中，请稍候... | Connecting, please wait... |
+| 连接失败 | Connection failed |
+| 重新连接 | Reconnect |
+| 连接成功 | Connected successfully |
+
+## 页面：Wi-Fi 设置 / 选择 Wi-Fi / 连接状态（对应设计图 22-27、37-38）
+
+| 中文 | 英文建议 |
+|---|---|
+| Wi-Fi设置（绑定流程页面标题） | Set up Wi-Fi |
+| 选择Wi-Fi（页面标题/列表页标题） | Choose a Wi-Fi network |
+| 请选择Wi-Fi（输入框占位） | Select a Wi-Fi network |
+| 选择Wi-Fi（按钮） | Choose |
+| 更换Wi-Fi | Change Wi-Fi network |
+| 请输入Wi-Fi密码 | Wi-Fi password |
+| 取消 | Cancel |
+| 确定 | Confirm |
+| 连接失败 | Couldn't connect to Wi-Fi |
+| 设备无响应，请将设备靠近路由器重试 | Device not responding. Move the device closer to the router and try again. |
+| Wi-Fi已连接成功 | Wi-Fi connected |
+| 已连接 | Connected |
+| 修改Wi-Fi | Change Wi-Fi network |
+
+## 页面：CGM Connection / NS 绑定（对应设计图 28-30、39）
+
+| 中文 | 英文建议 |
+|---|---|
+| 血糖源设置 | CGM Connection |
+| 输入手机号以查询NS账号 | Enter the mobile number linked to your Nightscout account. |
+| 请输入手机号 | Phone number |
+| 请输入验证码 | Verification code |
+| 获取验证码 | Get code |
+| 查询 | Search |
+| 23 秒后重发 | Resend in 23s |
+| 绑定 | Connect |
+| NS绑定成功 | Connected successfully |
+| 已绑定NS | Nightscout Connected |
+| NS网址 | NS URL |
+| 修改血糖源 | Change CGM Connection |
+
+## 页面：设备详情 / 我的设备 / 解绑设备（对应设计图 31-36、54）
+
+| 中文 | 英文建议 |
+|---|---|
+| 我的设备 | My Devices |
+| 糖哨兵 | GluSentry |
+| 设备已离线 | Device offline |
+| 添加其他设备 | Add Another Device |
+| Wi-Fi设置 | Wi-Fi settings |
+| 血糖源设置 | CGM Connection |
+| 模式设置与预览 | Mode Settings & Preview |
+| 解绑设备 | Unpair Device |
+| 确定解绑设备吗？ | Unpair this device? |
+| 蓝牙已断开，尝试连接中... | Bluetooth disconnected. Reconnecting... |
+| 蓝牙未打开 | Bluetooth is off |
+| 请确保设备已开机并在蓝牙范围内 | Make sure the device is powered on and within Bluetooth range. |
+| 连接成功 | Connected successfully |
+| 蓝牙未打开 | Bluetooth is off |
+| 连接失败 | Connection failed |
+
+## 页面：Units（新增绑定阶段与“我的”修改入口）
+
+| 中文 | 英文建议 |
+|---|---|
+| 血糖单位 | Glucose Unit |
+| 选择血糖单位 | Choose Glucose Unit |
+| 设备和 App 将按所选单位显示血糖值。 | The device and app will display glucose values in the selected unit. |
+| 选择后仍可在“我的”中修改。 | You can change this later from Me. |
+
+## 页面：模式设置与预览 / 多种模式（对应设计图 44-53）
+
+| 中文 | 英文建议 |
+|---|---|
+| 模式设置与预览 | Mode Settings & Preview |
+| 工作模式 | Work mode |
+| 居家模式 | Home mode |
+| 展示预览 | Display Preview |
+| 正常状态 | In Range |
+| 低血糖状态 | Low |
+| 高血糖状态 | High |
+| 无数据状态 | No Data |
+| 设备离线状态 | Device Offline |
+| 设备已离线 | Device offline |
+| 请检查您的血糖数据源是否正常同步数据 | Check whether your CGM is syncing properly. |
+| 亮度与音量 | Brightness and volume |
+| 屏幕亮度 | Screen Brightness |
+| 设备音量 | Device Volume |
+| 调整时可实时预览效果，保存后生效。 | Changes are previewed in real time and take effect after saving. |
+| 警报设置 | Alert Settings |
+| 高血糖 | High |
+| 低血糖 | Low |
+| 无数据 | No Data |
+| 设备离线 | Device Offline |
+| 报警方式 | Alert Preferences |
+| 声音警报 | Audio |
+| 屏幕闪烁警报 | Display flash |
+| 振动警报 | Vibration |
+| 设备发光 | Device light |
+| 开启后，设备平常发暖黄色光，报警时发橙红色光。 | When enabled, the device glows warm yellow normally and orange-red during alerts. |
+| 警报音模式 | Alert sound pattern |
+| 规律 | Standard |
+| 随机 | Random |
+| 小睡功能 | Snooze |
+| 小睡时长 | Snooze duration |
+| 开启后，短按功能键可暂停报警；小睡结束后，若仍超阈值将恢复报警。 | When enabled, briefly press the function button to pause alerts. Alerts will resume after the snooze period if the condition persists. |
+| 高血糖警报 | High glucose alert |
+| 当前血糖 | Current glucose |
+| 14.2 mmol/L · 5分钟前 | 14.2 mmol/L · 5 min ago |
+| 无数据警报 | No Data Alert |
+| 设备未收到血糖数据 | The device has not received glucose data |
+| 设备离线警报 | Device Offline Alert |
+| 设备已离线 | Device offline |
+| 10分钟 | 10 min |
+| 小睡 10 分钟 | Snooze for 10 min |
+| 停止 | Stop |
+| 高血糖 14.2 mmol/L | High 14.2 mmol/L |
+| 无数据 10分钟 | No data 10 min |
+| 已离线 10分钟 | Offline 10 min |
+| 小睡中 · 09:59 | Snoozing · 09:59 |
+| 停止本次警报 | Stop this alert |
+| 应用 | Apply |
+| 已应用 | Applied |
+| 温馨提示 | Heads Up |
+| 您已修改了警报设置，但尚未保存，这些修改将不会生效，是否继续？ | You have unsaved changes to your alert settings. Continue without saving? |
+| 保存失败，请检查网络连接 | Save failed. Check your network connection. |
+
+## 页面：我的与账号（新增“我的”页）
+
+| 中文 | 英文建议 |
+|---|---|
+| 我的 | Me |
+| 亲情连接 | Care Connect |
+| 照护档案 | Care Profiles |
+| 照护圈 | Care Circles |
+| 创建照护圈 | Create Care Circle |
+| 加入照护圈 | Join Care Circle |
+| 选择照护对象 | Select Profile |
+| 更换照护对象 | Switch Profile |
+| 当前照护对象 | Current profile |
+| 基础信息 | Profile information |
+| 账号与安全 | Account & Security |
+| 多语言 | Language |
+| 我的设备 | My Devices |
+| 退出登录 | Sign Out |
+| 密码设置 | Password Settings |
+
+## 页面：基础信息（新增，供糖宝参考）
+
+| 中文 | 英文建议 |
+|---|---|
+| 基础信息 | Profile information |
+| 让糖宝更懂Ta | Help Tang Bao get to know them better |
+| 完善基础信息后，糖宝可结合照护对象的血糖与健康数据，提供更个体化的分析与建议。 | Once their basic information is complete, Tang Bao can offer more personalized analysis and suggestions based on their glucose and health data. |
+| 可稍后从“我的 - 亲情连接”修改或补充。 | You can change this later from Me → Care Connect. |
+| 照护对象 | Who is this profile for? |
+| 本人 | Me |
+| 孩子 | My Child |
+| 父母 | My Parent |
+| 配偶 | My Partner |
+| 其他 | Other |
+| 昵称 | Nickname |
+| 性别 | Gender |
+| 男 | Male |
+| 女 | Female |
+| 出生日期 | Date of Birth |
+| 身高 | Height |
+| 体重 | Weight |
+| 患病类型 | Diabetes type |
+| 确诊时间 | Time since diagnosis |
+| 治疗方案 | Treatment plan |
+| 请选择 | Select |
+| T1DM（1型糖尿病） | Type 1 Diabetes (T1D) |
+| T2DM（2型糖尿病） | Type 2 Diabetes (T2D) |
+| GDM（妊娠糖尿病） | GDM (Gestational Diabetes) |
+| 其他类型糖尿病 | Other diabetes |
+| 胰岛素泵 | Insulin pump |
+| 餐前+基础 | Basal-bolus insulin |
+| 预混胰岛素 | Premixed insulin |
+| 降糖药物治疗 | Glucose-lowering medication |
+| 生活方式干预 | Lifestyle management |
+| 周制剂 | Once-weekly injection |
+| 混合闭环胰岛素输注系统 | Hybrid closed-loop system |
+| 胰岛素类型 | Insulin type |
+| 胰岛素泵类型 | Insulin pump type |
+| 血糖监测 | Glucose Monitoring |
+| 这些信息仅用于糖宝后续交流时参考，不会用于其他用途，也不会向任何第三方共享，请放心填写。 | This information is strictly used to help Tangbao assist you better. It will never be shared with third parties or used for other purposes. |
+
+## 页面：多语言（新增）
+
+| 中文 | 英文建议 |
+|---|---|
+| 多语言 | Language |
+| 简体中文 | 简体中文 |
+| English | English |
+| 保存失败，请重试 | Couldn’t save. Please try again. |
+
+备注：切换语言时，吐司中的“设置中”和“设置成功”应使用用户本次选择的目标语言展示。例如选择 English 后，切换过程和成功提示使用英文；选择简体中文后使用中文。
+
+## 页面：弹窗与异常提示（新增功能弹窗 + 既有异常）
+
+| 中文 | 英文建议 |
+|---|---|
+| 确认关闭全部报警方式？ | Turn off all alarm methods? |
+| 关闭后，设备可能无法在警报条件触发时提醒你。建议至少保留一种报警方式。 | If you turn off all alert methods, you won't be notified when your glucose is out of range. We recommend keeping at least one method on. |
+| 保留报警 | Keep alerts on |
+| 仍要关闭 | Turn off anyway |
+| 保存失败，请重试 | Couldn’t save. Please try again. |
